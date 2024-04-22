@@ -16,24 +16,33 @@
 
 
 -- 导出 paper-cutting 的数据库结构
-CREATE DATABASE IF NOT EXISTS `paper-cutting` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `paper-cutting` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `paper-cutting`;
 
 -- 导出  表 paper-cutting.buyer_info 结构
 CREATE TABLE IF NOT EXISTS `buyer_info` (
                                             `buyer_id` bigint NOT NULL,
-                                            `buyer_name` varchar(50) NOT NULL COMMENT '买家名称',
-    `buyer_account` varchar(20) NOT NULL DEFAULT '' COMMENT '买家账号',
+                                            `buyer_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '买家账号',
     `buyer_password` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '买家密码',
-    `buyer_sex` tinyint NOT NULL COMMENT '性别(0男,1女,2保密)',
-    `buyer_hobby` varchar(50) NOT NULL COMMENT '买家爱好',
-    `pic_url` varchar(255) NOT NULL COMMENT '头像',
+    `buyer_hobby` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '买家爱好',
+    `buyer_autograph` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+    `pic_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '头像',
     `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     `del_flag` bit(1) NOT NULL DEFAULT b'0' COMMENT '逻辑删除(默认0)'
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='买家信息表';
 
 -- 正在导出表  paper-cutting.buyer_info 的数据：~0 rows (大约)
+INSERT INTO `buyer_info` (`buyer_id`, `buyer_name`, `buyer_password`, `buyer_hobby`, `buyer_autograph`, `pic_url`, `create_time`, `update_time`, `del_flag`) VALUES
+                                                                                                                                                                 (1782381108064657409, 'admin', '$2a$10$52VDy3n3u4VbFDRHfG3O.O7RmLao/0JGf2IuPvJETXTSkFVMfmKdC', NULL, NULL, NULL, '2024-04-22 12:09:05', '2024-04-22 12:09:05', b'0'),
+                                                                                                                                                                 (1782381134824316929, 'admi', '$2a$10$JiNm1L1dWMo.mlAXDCa4FODWeWDNJclTRgisLKYMkwbdZmjGsKcpC', NULL, NULL, NULL, '2024-04-22 12:09:12', '2024-04-22 12:09:12', b'0'),
+                                                                                                                                                                 (1782381148883623938, 'adm', '$2a$10$b9g05KUzDqLgTWv9jGS6GOse6NIvXSCEM7KUYITZ1yuLAXtJKA7lC', NULL, NULL, NULL, '2024-04-22 12:09:15', '2024-04-22 12:09:15', b'0'),
+                                                                                                                                                                 (1782381159910449153, 'ad', '$2a$10$KyscoVDTOiMp/Lv7drBYuebBi5K5sgFMcGRrxWZgVR0kNSsjoOrl2', NULL, NULL, NULL, '2024-04-22 12:09:18', '2024-04-22 12:09:18', b'0'),
+                                                                                                                                                                 (1782381167762186242, 'a', '$2a$10$uHbmjgOXZcH/sgl3O78prucUEVdRouTD/9HHZRSejm2o5ZRjcDRlq', NULL, NULL, NULL, '2024-04-22 12:09:20', '2024-04-22 12:09:20', b'0'),
+                                                                                                                                                                 (1782381711926992898, 'a1155', '$2a$10$5KkTkZixHRVDiv6jHHPouuqtJb2TdxXMx2MFY50FCxDmxtSf7JsbC', NULL, NULL, NULL, '2024-04-22 12:11:29', '2024-04-22 12:11:29', b'0'),
+                                                                                                                                                                 (1782381753219915778, 'a11556', '$2a$10$WLiV4W/PeqtXXJOMmRrRSOzzcU/eWHxooicVhE0NgfmBWP6oS.J5W', NULL, NULL, NULL, '2024-04-22 12:11:39', '2024-04-22 12:11:39', b'0'),
+                                                                                                                                                                 (1782381793145495553, 'a11557', '$2a$10$5/JsFJt/GZ6eGPSDZ6AOq.i/.Kg2J0U12jAIeHsnHzE9fpEvKmAlu', NULL, NULL, NULL, '2024-04-22 12:11:49', '2024-04-22 12:11:49', b'0'),
+                                                                                                                                                                 (1782381820895010817, 'a11558', '$2a$10$G3/5P/9uRmMBud6RH40s0OSC.sZJ9VVcgE8E.L0YjqoGb88X.38RW', NULL, NULL, NULL, '2024-04-22 12:11:55', '2024-04-22 12:11:55', b'0');
 
 -- 导出  表 paper-cutting.cart_info 结构
 CREATE TABLE IF NOT EXISTS `cart_info` (
@@ -173,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `shop_info` (
     PRIMARY KEY (`shop_id`) USING BTREE
     ) ENGINE=InnoDB AUTO_INCREMENT=722354180 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='店铺信息表';
 
--- 正在导出表  paper-cutting.shop_info 的数据：~0 rows (大约)
+-- 正在导出表  paper-cutting.shop_info 的数据：~2 rows (大约)
 INSERT INTO `shop_info` (`shop_id`, `shop_name`, `pic_url`, `create_time`, `update_time`, `del_flag`) VALUES
                                                                                                           (1, '姿色纸缘', 'cdf', '2024-04-16 07:26:15', '2024-04-16 07:26:16', b'0'),
                                                                                                           (722354179, '店铺名称1', '品牌logo1', '2024-04-22 04:40:38', '2024-04-22 04:40:38', b'0');
