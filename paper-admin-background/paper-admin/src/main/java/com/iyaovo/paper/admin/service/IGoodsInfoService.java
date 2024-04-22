@@ -15,6 +15,7 @@ package com.iyaovo.paper.admin.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
@@ -30,28 +31,15 @@ import java.util.List;
  */
 public interface IGoodsInfoService extends IService<GoodsInfo> {
 
-
-   /**
-    * 展示首页商品
-    */
-   CommonPage<GoodsInfoVo> showGoods(Integer pageNum,
-                                                Integer pageSize);
-
-   /**
-    * 通过小类id获取商品(分页)
-    */
-   CommonPage<GoodsInfoVo> showGoodsByGoodsSecondCategoryId(Integer goodsSecondCategoryId,
-                                                    Integer pageNum,
-                                                    Integer pageSize);
    /**
     * 添加商品
     */
-   int create(GoodsInfo goodsInfo);
+   int create(GoodsInfoParam goodsInfoParam);
 
    /**
     * 修改商品
     */
-   int update(Integer id,GoodsInfo goodsInfo);
+   int update(Integer id,GoodsInfoParam goodsInfoParam);
 
    /**
     * 删除商品

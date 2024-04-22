@@ -13,13 +13,17 @@
  */
 package com.iyaovo.paper.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.PageHelper;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
+import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
 import com.iyaovo.paper.admin.service.IGoodsCategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,39 +39,43 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
    private final GoodsCategoryMapper goodsCategoryMapper;
 
 
-
-//   @Override
-//   public List<GoodsCategory> showGoodsFirstCategoryList() {
-//      return goodsCategoryMapper.selectList(null);
-//   }
-//
-//   @Override
-//   public List<GoodsCategory> showGoodsSecondCategoryListById(Integer goodsFirstCategoryId) {
-//      QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<>();
-//      goodsCategoryQueryWrapper.eq("goods_first_category_id",goodsFirstCategoryId);
-//      return goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
-//   }
-
-
-
    @Override
    public int create(GoodsCategoryParam goodsCategoryParam) {
-      return 0;
+      return goodsCategoryMapper.insert(new GoodsCategory(null,goodsCategoryParam.getName(),goodsCategoryParam.getParentId()));
    }
 
    @Override
    public int delete(Integer goodsCategoryId) {
-      return 0;
+      return goodsCategoryMapper.deleteById(goodsCategoryId);
    }
 
    @Override
    public int update(Integer id, GoodsCategoryParam goodsCategoryParam) {
-      return 0;
+      return goodsCategoryMapper.updateById(new GoodsCategory(id, goodsCategoryParam.getName(), goodsCategoryParam.getParentId()));
    }
 
    @Override
    public List<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
-      return null;
+      PageHelper.startPage(pageNum,pageSize);
+      QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<GoodsCategory>();
+      goodsCategoryQueryWrapper.eq("category_superior_id",parentId);
+      return goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
+   }
+
+   @Override
+   public List<GoodsCategoryWithChildrenItem> listWithChildren() {
+      QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<GoodsCategory>();
+      goodsCategoryQueryWrapper.eq("category_superior_id",0);
+      List<GoodsCategory> goodsCategories = goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
+      List<GoodsCategoryWithChildrenItem> goodsCategoryWithChildrenItems = new ArrayList<>();
+      goodsCategories.forEach(goodsCategory -> {
+         QueryWrapper<GoodsCategory> goodsCategoryChildrenQueryWrapper = new QueryWrapper<GoodsCategory>();
+         goodsCategoryChildrenQueryWrapper.eq("category_superior_id",goodsCategory.getGoodsCategoryId());
+         GoodsCategoryWithChildrenItem goodsCategoryWithChildrenItem = new GoodsCategoryWithChildrenItem(goodsCategory.getGoodsCategoryId(),
+                 goodsCategory.getGoodCategoryName(),goodsCategory.getCategorySuperiorId(),goodsCategoryMapper.selectList(goodsCategoryChildrenQueryWrapper));
+         goodsCategoryWithChildrenItems.add(goodsCategoryWithChildrenItem);
+      });
+      return goodsCategoryWithChildrenItems;
    }
 }
 

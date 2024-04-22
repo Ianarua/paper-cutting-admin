@@ -1,6 +1,7 @@
 package com.iyaovo.paper.admin.service;
 
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
+import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 
 import java.util.List;
@@ -36,4 +37,6 @@ public interface IGoodsCategoryService{
      * @return
      */
     List<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum);
+
+    List<GoodsCategoryWithChildrenItem> listWithChildren();
 }

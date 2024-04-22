@@ -1,7 +1,7 @@
 package com.iyaovo.paper.admin.controller;
 
+import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
-import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
 import com.iyaovo.paper.admin.service.IGoodsInfoService;
 import com.iyaovo.paper.common.api.CommonPage;
@@ -20,8 +20,8 @@ import java.util.List;
  */
 @Controller
 @Tag(name =  "商品管理")
-@RequestMapping("/product")
-public class GoodsInfoController {
+@RequestMapping("/goods")
+public class GoodsController {
 //    @Autowired
 //    private PmsProductService productService;
 
@@ -31,9 +31,8 @@ public class GoodsInfoController {
     @Operation(summary = "创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
-//    public CommonResult create(@RequestBody PmsProductParam productParam) {
-    public CommonResult create(@RequestBody GoodsInfo goodsInfo) {
-        int count = iGoodsInfoService.create(goodsInfo);
+    public CommonResult create(@RequestBody GoodsInfoParam goodsInfoParam) {
+        int count = iGoodsInfoService.create(goodsInfoParam);
         if (count > 0) {
             return CommonResult.success(count);
         } else {
@@ -45,8 +44,8 @@ public class GoodsInfoController {
     @Operation(summary = "更新商品")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult update(@PathVariable Integer id, @RequestBody GoodsInfo goodsInfo) {
-        int count = iGoodsInfoService.update(id, goodsInfo);
+    public CommonResult update(@PathVariable Integer id, @RequestBody GoodsInfoParam goodsInfoParam) {
+        int count = iGoodsInfoService.update(id, goodsInfoParam);
         if (count > 0) {
             return CommonResult.success(count);
         } else {
@@ -64,13 +63,15 @@ public class GoodsInfoController {
         return CommonResult.success(CommonPage.restPage(goodsInfoVoList));
     }
 
-    @Operation(summary = "根据商品名称或货号模糊查询")
+    @Operation(summary = "根据商品名称模糊查询")
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<GoodsInfoVo>> getList(String keyword) {
+        System.out.println("controller");
         List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(keyword);
         return CommonResult.success(goodsInfoVoList);
     }
+
 
 
 

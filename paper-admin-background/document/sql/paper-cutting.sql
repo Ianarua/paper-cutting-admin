@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `goods_category` (
                                                 `goods_category_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '第一类别名称',
     `category_superior_id` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '0即为上级分类',
     PRIMARY KEY (`goods_category_id`) USING BTREE
-    ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品第一类别表';
+    ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品第一类别表';
 
 -- 正在导出表  paper-cutting.goods_category 的数据：~10 rows (大约)
 INSERT INTO `goods_category` (`goods_category_id`, `goods_category_name`, `category_superior_id`) VALUES
@@ -75,7 +75,8 @@ INSERT INTO `goods_category` (`goods_category_id`, `goods_category_name`, `categ
                                                                                                       (7, '民俗', 0),
                                                                                                       (8, '喜字', 0),
                                                                                                       (9, '党史党建', 0),
-                                                                                                      (10, '剪纸定制', 0);
+                                                                                                      (10, '剪纸定制', 0),
+                                                                                                      (12, '商品分类名称', 1);
 
 -- 导出  表 paper-cutting.goods_collection 结构
 CREATE TABLE IF NOT EXISTS `goods_collection` (
@@ -91,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `goods_collection` (
 -- 导出  表 paper-cutting.goods_info 结构
 CREATE TABLE IF NOT EXISTS `goods_info` (
                                             `goods_id` int unsigned NOT NULL AUTO_INCREMENT,
-                                            `goods_second_category_id` tinyint NOT NULL COMMENT '商品第二类别表id',
+                                            `goods_category_id` tinyint NOT NULL COMMENT '商品第二类别表id',
                                             `shop_id` int NOT NULL DEFAULT '0' COMMENT '店铺id',
                                             `goods_name` varchar(50) NOT NULL COMMENT '商品名称',
     `goods_introduction` varchar(255) NOT NULL COMMENT '商品描述',
@@ -104,34 +105,11 @@ CREATE TABLE IF NOT EXISTS `goods_info` (
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     `del_flag` bit(1) NOT NULL DEFAULT b'0' COMMENT '逻辑删除(默认0)',
     PRIMARY KEY (`goods_id`) USING BTREE
-    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品信息表';
+    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品信息表';
 
 -- 正在导出表  paper-cutting.goods_info 的数据：~1 rows (大约)
-INSERT INTO `goods_info` (`goods_id`, `goods_second_category_id`, `shop_id`, `goods_name`, `goods_introduction`, `pic_url`, `price`, `promotion_price`, `sold_number`, `total_number`, `create_time`, `update_time`, `del_flag`) VALUES
-    (1, 2, 1, '手工剪纸十二生肖', '手工剪纸十二生肖是我国.....', 'abc', 20.00, 10.00, 15, 78, '2024-04-16 07:13:24', '2024-04-16 07:26:27', b'0');
-
--- 导出  表 paper-cutting.goods_second_category 结构
-CREATE TABLE IF NOT EXISTS `goods_second_category` (
-                                                       `goods_second_category_id` tinyint unsigned NOT NULL AUTO_INCREMENT,
-                                                       `goods_first_category_id` tinyint NOT NULL COMMENT '商品第一类别id',
-                                                       `goods_second_category_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '第二类别名称',
-    PRIMARY KEY (`goods_second_category_id`) USING BTREE
-    ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='商品第二类别表';
-
--- 正在导出表  paper-cutting.goods_second_category 的数据：~12 rows (大约)
-INSERT INTO `goods_second_category` (`goods_second_category_id`, `goods_first_category_id`, `goods_second_category_name`) VALUES
-                                                                                                                              (1, 2, '鼠'),
-                                                                                                                              (2, 2, '牛'),
-                                                                                                                              (3, 2, '虎'),
-                                                                                                                              (4, 2, '兔'),
-                                                                                                                              (5, 2, '龙'),
-                                                                                                                              (6, 2, '蛇'),
-                                                                                                                              (7, 2, '马'),
-                                                                                                                              (8, 2, '羊'),
-                                                                                                                              (9, 2, '猴'),
-                                                                                                                              (10, 2, '鸡'),
-                                                                                                                              (11, 2, '狗'),
-                                                                                                                              (12, 2, '猪');
+INSERT INTO `goods_info` (`goods_id`, `goods_category_id`, `shop_id`, `goods_name`, `goods_introduction`, `pic_url`, `price`, `promotion_price`, `sold_number`, `total_number`, `create_time`, `update_time`, `del_flag`) VALUES
+    (1, 12, 1, '手工剪纸十二生肖', '手工剪纸十二生肖是我国.....', 'abc', 20.00, 10.00, 15, 78, '2024-04-16 07:13:24', '2024-04-22 04:43:58', b'0');
 
 -- 导出  表 paper-cutting.goods_views 结构
 CREATE TABLE IF NOT EXISTS `goods_views` (
@@ -193,11 +171,12 @@ CREATE TABLE IF NOT EXISTS `shop_info` (
     `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     `del_flag` bit(1) NOT NULL DEFAULT b'0' COMMENT '逻辑删除(默认0)',
     PRIMARY KEY (`shop_id`) USING BTREE
-    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='店铺信息表';
+    ) ENGINE=InnoDB AUTO_INCREMENT=722354180 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='店铺信息表';
 
 -- 正在导出表  paper-cutting.shop_info 的数据：~0 rows (大约)
 INSERT INTO `shop_info` (`shop_id`, `shop_name`, `pic_url`, `create_time`, `update_time`, `del_flag`) VALUES
-    (1, '姿色纸缘', 'cdf', '2024-04-16 07:26:15', '2024-04-16 07:26:16', b'0');
+                                                                                                          (1, '姿色纸缘', 'cdf', '2024-04-16 07:26:15', '2024-04-16 07:26:16', b'0'),
+                                                                                                          (722354179, '店铺名称1', '品牌logo1', '2024-04-22 04:40:38', '2024-04-22 04:40:38', b'0');
 
 -- 导出  表 paper-cutting.ums_admin 结构
 CREATE TABLE IF NOT EXISTS `ums_admin` (
@@ -234,9 +213,9 @@ CREATE TABLE IF NOT EXISTS `ums_admin_login_log` (
     `address` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
     `user_agent` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '浏览器登录类型',
     PRIMARY KEY (`id`) USING BTREE
-    ) ENGINE=InnoDB AUTO_INCREMENT=414 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='后台用户登录日志表';
+    ) ENGINE=InnoDB AUTO_INCREMENT=417 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='后台用户登录日志表';
 
--- 正在导出表  paper-cutting.ums_admin_login_log 的数据：~412 rows (大约)
+-- 正在导出表  paper-cutting.ums_admin_login_log 的数据：~414 rows (大约)
 INSERT INTO `ums_admin_login_log` (`id`, `admin_id`, `create_time`, `ip`, `address`, `user_agent`) VALUES
                                                                                                        (1, 3, '2018-12-23 14:27:00', '0:0:0:0:0:0:0:1', NULL, NULL),
                                                                                                        (2, 3, '2019-04-07 16:04:39', '0:0:0:0:0:0:0:1', NULL, NULL),
@@ -650,7 +629,10 @@ INSERT INTO `ums_admin_login_log` (`id`, `admin_id`, `create_time`, `ip`, `addre
                                                                                                        (410, 3, '2023-02-09 15:46:41', '192.168.56.1', NULL, NULL),
                                                                                                        (411, 3, '2023-02-10 17:23:52', '192.168.56.1', NULL, NULL),
                                                                                                        (412, 3, '2023-05-11 15:29:54', '192.168.56.1', NULL, NULL),
-                                                                                                       (413, 3, '2024-04-20 19:16:21', '192.168.1.5', NULL, NULL);
+                                                                                                       (413, 3, '2024-04-20 19:16:21', '192.168.1.5', NULL, NULL),
+                                                                                                       (414, 3, '2024-04-20 19:53:03', '192.168.1.5', NULL, NULL),
+                                                                                                       (415, 3, '2024-04-22 11:34:12', '10.0.0.172', NULL, NULL),
+                                                                                                       (416, 3, '2024-04-22 11:35:13', '10.0.0.172', NULL, NULL);
 
 -- 导出  表 paper-cutting.ums_admin_permission_relation 结构
 CREATE TABLE IF NOT EXISTS `ums_admin_permission_relation` (
@@ -739,7 +721,7 @@ CREATE TABLE IF NOT EXISTS `ums_permission` (
 -- 正在导出表  paper-cutting.ums_permission 的数据：~18 rows (大约)
 INSERT INTO `ums_permission` (`id`, `pid`, `name`, `value`, `icon`, `type`, `uri`, `status`, `create_time`, `sort`) VALUES
                                                                                                                         (1, 0, '商品', NULL, NULL, 0, NULL, 1, '2018-09-29 16:15:14', 0),
-                                                                                                                        (2, 1, '商品列表', 'pms:product:read', NULL, 1, '/pms/product/index', 1, '2018-09-29 16:17:01', 0),
+                                                                                                                        (2, 1, '商品列表', 'pms:product:read', NULL, 1, '/pms/goods/index', 1, '2018-09-29 16:17:01', 0),
                                                                                                                         (3, 1, '添加商品', 'pms:product:create', NULL, 1, '/pms/product/add', 1, '2018-09-29 16:18:51', 0),
                                                                                                                         (4, 1, '商品分类', 'pms:productCategory:read', NULL, 1, '/pms/productCate/index', 1, '2018-09-29 16:23:07', 0),
                                                                                                                         (5, 1, '商品类型', 'pms:productAttribute:read', NULL, 1, '/pms/productAttr/index', 1, '2018-09-29 16:24:43', 0),
@@ -770,11 +752,11 @@ CREATE TABLE IF NOT EXISTS `ums_resource` (
 
 -- 正在导出表  paper-cutting.ums_resource 的数据：~31 rows (大约)
 INSERT INTO `ums_resource` (`id`, `create_time`, `name`, `url`, `description`, `category_id`) VALUES
-                                                                                                  (1, '2020-02-04 17:04:55', '商品品牌管理', '/brand/**', NULL, 1),
+                                                                                                  (1, '2020-02-04 17:04:55', '商品品牌管理', '/shop/**', NULL, 1),
                                                                                                   (2, '2020-02-04 17:05:35', '商品属性分类管理', '/productAttribute/category/**', NULL, 1),
                                                                                                   (3, '2020-02-04 17:06:13', '商品属性管理', '/productAttribute/**', NULL, 1),
-                                                                                                  (4, '2020-02-04 17:07:15', '商品分类管理', '/productCategory/**', NULL, 1),
-                                                                                                  (5, '2020-02-04 17:09:16', '商品管理', '/product/**', NULL, 1),
+                                                                                                  (4, '2020-02-04 17:07:15', '商品分类管理', '/goodsCategory/**', NULL, 1),
+                                                                                                  (5, '2020-02-04 17:09:16', '商品管理', '/goods/**', NULL, 1),
                                                                                                   (6, '2020-02-04 17:09:53', '商品库存管理', '/sku/**', NULL, 1),
                                                                                                   (8, '2020-02-05 14:43:37', '订单管理', '/order/**', '', 2),
                                                                                                   (9, '2020-02-05 14:44:22', ' 订单退货申请管理', '/returnApply/**', '', 2),

@@ -24,24 +24,18 @@ import java.util.List;
 @RequestMapping("/shop")
 @Slf4j
 @RequiredArgsConstructor
-//public class PmsBrandController {
 public class ShopController {
 
-//    private final PmsBrandService brandService;
     private final IShopInfoService iShopInfoService;
 
     @Operation(summary = "获取全部店铺列表")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
-//    public CommonResult<List<PmsBrand>> getList() {
-//        return CommonResult.success(brandService.listAllBrand());
-//    }
     public CommonResult<List<ShopInfo>> getList() {
         return CommonResult.success(iShopInfoService.listAllShop());
     }
 
     @Operation(summary = "添加店铺")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-//    public CommonResult create(@Validated @RequestBody PmsBrandParam pmsBrand) {
     public CommonResult create(@Validated @RequestBody ShopInfoParam shopInfoParam) {
         CommonResult commonResult;
         int count = iShopInfoService.createShop(shopInfoParam);
@@ -55,7 +49,7 @@ public class ShopController {
 
     @Operation(summary = "更新店铺")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable("id") Long id,
+    public CommonResult update(@PathVariable("id") Integer id,
                                @Validated @RequestBody ShopInfoParam shopInfoParam) {
         CommonResult commonResult;
         int count = iShopInfoService.updateShop(id,shopInfoParam);
@@ -69,7 +63,7 @@ public class ShopController {
 
     @Operation(summary = "删除店铺")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public CommonResult delete(@PathVariable("id") Long id) {
+    public CommonResult delete(@PathVariable("id") Integer id) {
         int count = iShopInfoService.deleteShop(id);
         if (count == 1) {
             return CommonResult.success(null);
@@ -95,7 +89,7 @@ public class ShopController {
 
     @Operation(summary = "批量删除店铺")
     @PostMapping(value = "/delete/batch")
-    public CommonResult deleteBatch(@RequestParam("ids") List<Long> ids) {
+    public CommonResult deleteBatch(@RequestParam("ids") List<Integer> ids) {
         int count = iShopInfoService.deleteShop(ids);
         if (count > 0) {
             return CommonResult.success(count);

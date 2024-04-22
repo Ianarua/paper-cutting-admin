@@ -1,6 +1,7 @@
 package com.iyaovo.paper.admin.controller;
 
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
+import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.service.IGoodsCategoryService;
 import com.iyaovo.paper.common.api.CommonPage;
@@ -82,11 +83,11 @@ public class GoodsCategoryController {
         }
     }
 
-//    @Operation(summary = "查询所有一级分类及子分类")
-//    @RequestMapping(value = "/list/withChildren", method = RequestMethod.GET)
-//    @ResponseBody
-//    public CommonResult<List<PmsProductCategoryWithChildrenItem>> listWithChildren() {
-//        List<PmsProductCategoryWithChildrenItem> list = iGoodsCategoryService.listWithChildren();
-//        return CommonResult.success(list);
-//    }
+    @Operation(summary = "查询所有一级分类及子分类")
+    @RequestMapping(value = "/list/withChildren", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<List<GoodsCategoryWithChildrenItem>> listWithChildren() {
+        List<GoodsCategoryWithChildrenItem> list = iGoodsCategoryService.listWithChildren();
+        return CommonResult.success(list);
+    }
 }

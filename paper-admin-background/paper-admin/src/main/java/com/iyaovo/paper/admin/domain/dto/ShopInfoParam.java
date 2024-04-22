@@ -20,10 +20,5 @@ public class ShopInfoParam {
     @NotEmpty
     @Schema(defaultValue = "品牌logo",required = true)
     private String logo;
-//
-//    @Schema(defaultValue = "品牌大图")
-//    private String bigPic;
 
-    @Schema(defaultValue = "品牌介绍")
-    private String introduction;
 }

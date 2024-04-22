@@ -13,7 +13,7 @@ public interface IShopInfoService extends IService<ShopInfo> {
     /**
      * 展示该店铺商品
      */
-    CommonPage<GoodsInfo> showGoodsByShopId(Integer shopId,
+    List<GoodsInfo> showGoodsByShopId(Integer shopId,
                                             Integer pageNum,
                                             Integer pageSize);
 
@@ -40,21 +40,21 @@ public interface IShopInfoService extends IService<ShopInfo> {
      * @param shopInfoParam
      * @return
      */
-    int updateShop(Long id, ShopInfoParam shopInfoParam);
+    int updateShop(Integer id, ShopInfoParam shopInfoParam);
 
     /**
      * 删除店铺
      * @param id
      * @return
      */
-    int deleteShop(Long id);
+    int deleteShop(Integer id);
 
     /**
      * 批量删除店铺
      * @param ids
      * @return
      */
-    int deleteShop(List<Long> ids);
+    int deleteShop(List<Integer> ids);
 
     /**
      * 通过关键词搜索店铺

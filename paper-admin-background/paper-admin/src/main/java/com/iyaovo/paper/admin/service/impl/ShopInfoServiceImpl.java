@@ -13,13 +13,19 @@
  */
 package com.iyaovo.paper.admin.service.impl;
 
+import cn.hutool.core.util.StrUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.iyaovo.paper.admin.domain.dto.ShopInfoParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.entity.ShopInfo;
+import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.mapper.ShopInfoMapper;
 import com.iyaovo.paper.admin.service.IShopInfoService;
 import com.iyaovo.paper.common.api.CommonPage;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,48 +37,63 @@ import java.util.List;
  * @Date: 2024/4/13 19:11:52
  */
 @Service
+@RequiredArgsConstructor
 public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> implements IShopInfoService {
 
+   private final ShopInfoMapper shopInfoMapper;
+   private final GoodsInfoMapper goodsInfoMapper;
 
    @Override
-   public CommonPage<GoodsInfo> showGoodsByShopId(Integer shopId, Integer pageNum, Integer pageSize) {
-      return null;
+   public List<GoodsInfo> showGoodsByShopId(Integer shopId, Integer pageNum, Integer pageSize) {
+      PageHelper.startPage(pageNum,pageSize);
+      QueryWrapper<GoodsInfo> goodsInfoQueryWrapper = new QueryWrapper<GoodsInfo>();
+      goodsInfoQueryWrapper.eq("shop_id", shopId);
+      return goodsInfoMapper.selectList(goodsInfoQueryWrapper);
    }
 
    @Override
    public ShopInfo showShopInfoByGoodsId(Integer goodsId) {
-      return null;
+      QueryWrapper<GoodsInfo> goodsInfoQueryWrapper = new QueryWrapper<GoodsInfo>();
+      GoodsInfo goodsInfo = goodsInfoMapper.selectById(goodsId);
+      QueryWrapper<ShopInfo> shopInfoQueryWrapper = new QueryWrapper<ShopInfo>();
+      shopInfoQueryWrapper.eq("shop_id",goodsInfo.getShopId());
+      return shopInfoMapper.selectOne(shopInfoQueryWrapper);
    }
 
    @Override
    public List<ShopInfo> listAllShop() {
-      return null;
+      return shopInfoMapper.selectList(null);
    }
 
    @Override
    public int createShop(ShopInfoParam shopInfoParam) {
-      return 0;
+      return shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getName(), shopInfoParam.getLogo()));
    }
 
    @Override
-   public int updateShop(Long id, ShopInfoParam shopInfoParam) {
-      return 0;
+   public int updateShop(Integer id, ShopInfoParam shopInfoParam) {
+      return shopInfoMapper.updateById(new ShopInfo(id,shopInfoParam.getName(), shopInfoParam.getLogo()));
    }
 
 
    @Override
-   public int deleteShop(Long id) {
-      return 0;
+   public int deleteShop(Integer id) {
+      return shopInfoMapper.deleteById(id);
    }
 
    @Override
-   public int deleteShop(List<Long> ids) {
-      return 0;
+   public int deleteShop(List<Integer> ids) {
+      return shopInfoMapper.deleteBatchIds(ids);
    }
 
    @Override
    public List<ShopInfo> listShop(String keyword, Integer pageNum, Integer pageSize) {
-      return null;
+      PageHelper.startPage(pageNum, pageSize);
+      QueryWrapper<ShopInfo> shopInfoQueryWrapper = new QueryWrapper<ShopInfo>();
+      if(!StrUtil.hasBlank(keyword)){
+         shopInfoQueryWrapper.like("shop_name",keyword);
+      }
+      return shopInfoMapper.selectList(shopInfoQueryWrapper);
    }
 
 }
