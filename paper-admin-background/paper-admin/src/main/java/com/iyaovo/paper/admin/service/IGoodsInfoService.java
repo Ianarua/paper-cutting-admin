@@ -20,6 +20,7 @@ import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
 import com.iyaovo.paper.common.api.CommonPage;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -48,12 +49,16 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
 
    /**
     * 查询商品
-    * @param goodsInfoQueryParam
+    * @param
     * @param pageSize
     * @param pageNum
     * @return
     */
-   List<GoodsInfoVo> list(GoodsInfoQueryParam goodsInfoQueryParam, Integer pageSize, Integer pageNum);
+   List<GoodsInfoVo> list(String keyword,
+                          Integer goodsCategoryId,
+                          Integer shopId,
+                          Integer pageSize,
+                          Integer pageNum);
 
    /**
     * 根据关键字查询
@@ -62,6 +67,5 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
     */
    List<GoodsInfoVo> list(String keyWord);
 
-   // TODO 按条件查询
 }
 

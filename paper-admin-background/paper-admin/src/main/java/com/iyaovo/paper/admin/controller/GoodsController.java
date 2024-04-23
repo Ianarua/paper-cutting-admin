@@ -56,10 +56,14 @@ public class GoodsController {
     @Operation(summary = "查询商品")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<CommonPage<GoodsInfoVo>> getList(GoodsInfoQueryParam goodsInfoQueryParam,
+    public CommonResult<CommonPage<GoodsInfoVo>> getList( @RequestParam(value = "keyword",required = false)String keyword,
+                                                          @RequestParam(value = "goodsCategoryId",required = false) Integer goodsCategoryId,
+                                                          @RequestParam(value = "shopId",required = false) Integer shopId,
                                                          @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                          @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(goodsInfoQueryParam, pageSize, pageNum);
+        System.out.println(keyword);
+        System.out.println(goodsCategoryId);
+        List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(keyword,goodsCategoryId,shopId, pageSize, pageNum);
         return CommonResult.success(CommonPage.restPage(goodsInfoVoList));
     }
 
@@ -74,17 +78,4 @@ public class GoodsController {
 
 
 
-
-//    @Operation(summary = "批量修改删除状态")
-//    @RequestMapping(value = "/update/deleteStatus", method = RequestMethod.POST)
-//    @ResponseBody
-//    public CommonResult updateDeleteStatus(@RequestParam("ids") List<Long> ids,
-//                                           @RequestParam("deleteStatus") Integer deleteStatus) {
-//        int count = productService.updateDeleteStatus(ids, deleteStatus);
-//        if (count > 0) {
-//            return CommonResult.success(count);
-//        } else {
-//            return CommonResult.failed();
-//        }
-//    }
 }

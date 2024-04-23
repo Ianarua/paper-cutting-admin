@@ -80,20 +80,21 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
    }
 
    @Override
-   public List<GoodsInfoVo> list(GoodsInfoQueryParam goodsInfoQueryParam, Integer pageSize, Integer pageNum) {
+   public List<GoodsInfoVo> list(String keyword, Integer goodsCategoryId, Integer shopId, Integer pageSize, Integer pageNum) {
       PageHelper.startPage(pageNum,pageSize);
       QueryWrapper<GoodsInfo> goodsInfoQueryWrapper = new QueryWrapper<GoodsInfo>();
-      if(!StrUtil.hasBlank(goodsInfoQueryParam.getKeyword())){
-         goodsInfoQueryWrapper.like("goods_name",goodsInfoQueryParam.getKeyword());
+      if(!StrUtil.hasBlank(keyword)){
+         goodsInfoQueryWrapper.like("goods_name",keyword);
       }
-      if(goodsInfoQueryParam.getGoodsCategoryId() != 0){
-         goodsInfoQueryWrapper.eq("goods_category_id",goodsInfoQueryParam.getGoodsCategoryId());
+      if(goodsCategoryId != null){
+         goodsInfoQueryWrapper.eq("goods_category_id",goodsCategoryId);
       }
-      if(goodsInfoQueryParam.getShopId() != 0){
-         goodsInfoQueryWrapper.eq("shop_id",goodsInfoQueryParam.getShopId());
+      if(shopId != null){
+         goodsInfoQueryWrapper.eq("shop_id",shopId);
       }
       return goodsInfoToGoodsInfoVo(goodsInfoMapper.selectList(goodsInfoQueryWrapper));
    }
+
 
    @Override
    public List<GoodsInfoVo> list(String keyWord) {
