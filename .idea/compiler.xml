@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="paper-admin" />
+        <module name="paper-foreground" />
+        <module name="paper-common" />
+        <module name="paper-security" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="paper-admin" target="17" />
+      <module name="paper-admin-background" target="17" />
+      <module name="paper-common" target="17" />
+      <module name="paper-foreground" target="17" />
+      <module name="paper-security" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="paper-admin" options="-parameters" />
+      <module name="paper-admin-background" options="-parameters" />
+      <module name="paper-common" options="-parameters" />
+      <module name="paper-foreground" options="-parameters" />
+      <module name="paper-security" options="-parameters" />
+    </option>
+  </component>
+</project>

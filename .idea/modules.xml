@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/后台.iml" filepath="$PROJECT_DIR$/.idea/后台.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paper-admin-background/paper-admin/paper-admin.iml" filepath="$PROJECT_DIR$/paper-admin-background/paper-admin/paper-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paper-admin-background/paper-admin-background.iml" filepath="$PROJECT_DIR$/paper-admin-background/paper-admin-background.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paper-admin-background/paper-common/paper-common.iml" filepath="$PROJECT_DIR$/paper-admin-background/paper-common/paper-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/paper-cutting-admin.iml" filepath="$PROJECT_DIR$/.idea/paper-cutting-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paper-admin-background/paper-foreground/paper-foreground.iml" filepath="$PROJECT_DIR$/paper-admin-background/paper-foreground/paper-foreground.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paper-admin-background/paper-security/paper-security.iml" filepath="$PROJECT_DIR$/paper-admin-background/paper-security/paper-security.iml" />
     </modules>
   </component>
 </project>
