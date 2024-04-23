@@ -32,7 +32,7 @@ export const constantRouterMap = [
                 name: 'home',
                 component: () => import('@/views/home/index'),
                 meta: { title: '仪表盘', icon: 'dashboard' }
-            },
+            }
             // {
             //     name: 'document',
             //     path: 'https://www.macrozheng.com',
@@ -54,12 +54,13 @@ export const asyncRouterMap = [
         redirect: '/pms/product',
         name: 'pms',
         meta: { title: '商品', icon: 'product' },
-        children: [{
-            path: 'product',
-            name: 'product',
-            component: () => import('@/views/pms/product/index'),
-            meta: { title: '商品列表', icon: 'product-list' }
-        },
+        children: [
+            {
+                path: 'product',
+                name: 'product',
+                component: () => import('@/views/pms/product/index'),
+                meta: { title: '商品列表', icon: 'product-list' }
+            },
             {
                 path: 'addProduct',
                 name: 'addProduct',
