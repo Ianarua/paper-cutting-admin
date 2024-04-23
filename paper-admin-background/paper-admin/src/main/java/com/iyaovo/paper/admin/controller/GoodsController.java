@@ -67,6 +67,7 @@ public class GoodsController {
         return CommonResult.success(CommonPage.restPage(goodsInfoVoList));
     }
 
+
     @Operation(summary = "根据商品名称模糊查询")
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
@@ -75,6 +76,7 @@ public class GoodsController {
         List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(keyword);
         return CommonResult.success(goodsInfoVoList);
     }
+
 
 
 
