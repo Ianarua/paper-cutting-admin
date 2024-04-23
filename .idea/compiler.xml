@@ -9,6 +9,7 @@
         <module name="paper-admin" />
         <module name="paper-foreground" />
         <module name="paper-common" />
+        <module name="paper-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

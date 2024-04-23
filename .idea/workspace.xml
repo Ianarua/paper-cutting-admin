@@ -4,7 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9df6cd69-b6fd-4f34-a4d7-27d752ec174d" name="Changes" comment="merge" />
+    <list default="true" id="9df6cd69-b6fd-4f34-a4d7-27d752ec174d" name="Changes" comment="merge">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/document/sql/paper-cutting.sql" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/document/sql/paper-cutting.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/productAttr.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/productAttr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/productCate.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/productCate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/components/Breadcrumb/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/oms/apply/applyDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/oms/apply/applyDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/oms/order/deliverOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/oms/order/deliverOrderList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/components/BrandDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/components/BrandDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/update.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/addProductAttr.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/addProductAttr.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/components/ProductAttrDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/components/ProductAttrDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/productAttrList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/productAttrList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/updateProductAttr.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/updateProductAttr.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/components/ProductCateDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/components/ProductCateDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/update.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +52,14 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="E:\Program Files\apache-maven-3.3.9-bin\repository" />
         <option name="mavenHome" value="$PROJECT_DIR$/../../../Program Files/apache-maven-3.3.9-bin/apache-maven-3.3.9" />
+        <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="E:\Program Files\apache-maven-3.3.9-bin\apache-maven-3.3.9\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectId" id="2fUPBjQ5woadSzJQAEYsYIWadcZ" />
   <component name="ProjectViewState">
@@ -62,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713852549988</updated>
-      <workItem from="1713852551513" duration="317000" />
+      <workItem from="1713852551513" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1713852686781</created>
