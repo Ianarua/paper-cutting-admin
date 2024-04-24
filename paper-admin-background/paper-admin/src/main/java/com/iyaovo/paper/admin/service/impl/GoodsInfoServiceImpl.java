@@ -19,6 +19,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
+import com.iyaovo.paper.admin.domain.dto.IdsParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
@@ -73,8 +74,13 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
    }
 
    @Override
-   public void deleteGoods(List<Integer> ids) {
-      ids.forEach(id->goodsInfoMapper.deleteById(id));
+   public void deleteGoods(IdsParam idsParam) {
+      int[] ids = idsParam.getIds();
+      for (Integer id:ids
+           ) {
+         goodsInfoMapper.deleteById(id);
+      }
+
    }
 
    @Override

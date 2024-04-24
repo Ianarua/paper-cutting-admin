@@ -18,6 +18,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
+import com.iyaovo.paper.admin.domain.dto.IdsParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
 import com.iyaovo.paper.common.api.CommonPage;
@@ -46,7 +47,7 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
    /**
     * 删除商品
     */
-   void deleteGoods(List<Integer> goodsId);
+   void deleteGoods(IdsParam idsParam);
 
    /**
     * 查询商品

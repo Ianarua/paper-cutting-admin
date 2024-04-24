@@ -2,6 +2,7 @@ package com.iyaovo.paper.admin.controller;
 
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
+import com.iyaovo.paper.admin.domain.dto.IdsParam;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
 import com.iyaovo.paper.admin.service.IGoodsInfoService;
 import com.iyaovo.paper.common.api.CommonPage;
@@ -84,8 +85,8 @@ public class GoodsController {
     @Operation(summary = "删除商品")
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult deleteGoods(@RequestBody List<Integer> ids) {
-        iGoodsInfoService.deleteGoods(ids);
+    public CommonResult deleteGoods(@RequestBody IdsParam idsParam) {
+        iGoodsInfoService.deleteGoods(idsParam);
         return CommonResult.success();
     }
 }
