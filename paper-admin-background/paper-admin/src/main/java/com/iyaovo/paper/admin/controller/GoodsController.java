@@ -76,11 +76,16 @@ public class GoodsController {
     @RequestMapping(value = "/simpleList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<GoodsInfoVo>> getList(String keyword) {
-        System.out.println("controller");
         List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(keyword);
         return CommonResult.success(goodsInfoVoList);
     }
 
-//    TODO 删除商品
 
+    @Operation(summary = "删除商品")
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult deleteGoods(@RequestBody List<Integer> ids) {
+        iGoodsInfoService.deleteGoods(ids);
+        return CommonResult.success();
+    }
 }

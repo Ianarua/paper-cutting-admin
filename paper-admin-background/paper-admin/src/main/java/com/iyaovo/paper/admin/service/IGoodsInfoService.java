@@ -46,7 +46,7 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
    /**
     * 删除商品
     */
-   void deleteGoods(Integer goodsId);
+   void deleteGoods(List<Integer> goodsId);
 
    /**
     * 查询商品

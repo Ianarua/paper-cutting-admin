@@ -73,8 +73,8 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
    }
 
    @Override
-   public void deleteGoods(Integer goodsId) {
-      goodsInfoMapper.deleteById(goodsId);
+   public void deleteGoods(List<Integer> ids) {
+      ids.forEach(id->goodsInfoMapper.deleteById(id));
    }
 
    @Override
