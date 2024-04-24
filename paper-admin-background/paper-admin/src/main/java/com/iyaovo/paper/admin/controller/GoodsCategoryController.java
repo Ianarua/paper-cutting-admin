@@ -27,7 +27,15 @@ public class GoodsCategoryController {
     @Autowired
     private IGoodsCategoryService iGoodsCategoryService;
 
-    @Operation(description = "添加商品分类")
+    @Operation(summary = "获取单个分类")
+    @RequestMapping(value = "/{goodsCategoryId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getOne(@PathVariable("goodsCategoryId") Integer goodsCategoryId) {
+        return CommonResult.success(iGoodsCategoryService.getOneGoodsCategory(goodsCategoryId));
+    }
+
+
+    @Operation(summary = "添加商品分类")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@Validated @RequestBody GoodsCategoryParam goodsCategoryParam) {

@@ -22,11 +22,17 @@ import java.util.List;
 @Tag(name =  "商品管理")
 @RequestMapping("/goods")
 public class GoodsController {
-//    @Autowired
-//    private PmsProductService productService;
+
 
     @Autowired
     private IGoodsInfoService iGoodsInfoService;
+
+    @Operation(summary = "获取单个商品")
+    @RequestMapping(value = "/{goodsId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getOne(@PathVariable("goodsId") Integer goodsId) {
+        return CommonResult.success(iGoodsInfoService.getOneGoods(goodsId));
+    }
 
     @Operation(summary = "创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)

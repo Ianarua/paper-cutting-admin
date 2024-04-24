@@ -28,6 +28,13 @@ public class ShopController {
 
     private final IShopInfoService iShopInfoService;
 
+    @Operation(summary = "获取单个店铺")
+    @RequestMapping(value = "/{shopId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getOne(@PathVariable("shopId") Integer shopId) {
+        return CommonResult.success(iShopInfoService.getOneShop(shopId));
+    }
+
     @Operation(summary = "获取全部店铺列表")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     public CommonResult<List<ShopInfo>> getList() {

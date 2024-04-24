@@ -52,11 +52,13 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
 
    private final GoodsCategoryMapper goodsCategoryMapper;
 
-
-
-
-
-
+   @Override
+   public GoodsInfoVo getOneGoods(Integer goodsId) {
+      List<GoodsInfo> goods = new ArrayList<>();
+      GoodsInfo goodsInfo = goodsInfoMapper.selectById(goodsId);
+      goods.add(goodsInfo);
+      return goodsInfoToGoodsInfoVo(goods).get(0);
+   }
 
    @Override
    public int create(GoodsInfoParam goodsInfoParam) {
@@ -105,6 +107,8 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
       }
       return goodsInfoToGoodsInfoVo(goodsInfoMapper.selectList(goodsInfoQueryWrapper));
    }
+
+
 
 
    private List<GoodsInfoVo> goodsInfoToGoodsInfoVo(List<GoodsInfo> goodsInfoList){

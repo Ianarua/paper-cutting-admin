@@ -41,7 +41,7 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
 
    @Override
    public int create(GoodsCategoryParam goodsCategoryParam) {
-      return goodsCategoryMapper.insert(new GoodsCategory(null,goodsCategoryParam.getName(),goodsCategoryParam.getParentId()));
+      return goodsCategoryMapper.insert(new GoodsCategory(null,goodsCategoryParam.getName(),goodsCategoryParam.getPicUrl(),goodsCategoryParam.getParentId()));
    }
 
    @Override
@@ -51,7 +51,7 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
 
    @Override
    public int update(Integer id, GoodsCategoryParam goodsCategoryParam) {
-      return goodsCategoryMapper.updateById(new GoodsCategory(id, goodsCategoryParam.getName(), goodsCategoryParam.getParentId()));
+      return goodsCategoryMapper.updateById(new GoodsCategory(id, goodsCategoryParam.getName(),goodsCategoryParam.getPicUrl(),goodsCategoryParam.getParentId()));
    }
 
    @Override
@@ -76,6 +76,11 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
          goodsCategoryWithChildrenItems.add(goodsCategoryWithChildrenItem);
       });
       return goodsCategoryWithChildrenItems;
+   }
+
+   @Override
+   public GoodsCategory getOneGoodsCategory(Integer goodsCategoryId) {
+      return goodsCategoryMapper.selectById(goodsCategoryId);
    }
 }
 

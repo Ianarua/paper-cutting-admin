@@ -17,6 +17,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,13 +29,12 @@ import lombok.extern.slf4j.Slf4j;
  * @Author: 22932
  * @Date: 2024/4/12 17:39:58
  */
-@Schema(description = "商品第一类别")
+@Schema(description = "商品类别")
 @Slf4j
 @Data
 @AllArgsConstructor
 @TableName("goods_category")
 public class GoodsCategory {
-
    /**
     * 商品类别id
     */
@@ -42,15 +42,23 @@ public class GoodsCategory {
    private Integer goodsCategoryId;
 
    /**
-    * 商品第一类别名称
+    * 商品类别名称
     */
    @TableField("goods_category_name")
    private String goodCategoryName;
+
+   /**
+    * 商品类别名称
+    */
+   @TableField("pic_url")
+   private String picUrl;
 
    /**
     * 商品上级类别id
     */
    @TableField("category_superior_id")
    private Integer categorySuperiorId;
+
+
 }
 

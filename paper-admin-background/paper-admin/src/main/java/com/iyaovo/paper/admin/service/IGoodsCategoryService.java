@@ -39,4 +39,7 @@ public interface IGoodsCategoryService{
     List<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum);
 
     List<GoodsCategoryWithChildrenItem> listWithChildren();
+
+    GoodsCategory getOneGoodsCategory(Integer goodsCategoryId);
+
 }

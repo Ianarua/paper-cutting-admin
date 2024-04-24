@@ -67,5 +67,6 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
     */
    List<GoodsInfoVo> list(String keyWord);
 
+   GoodsInfoVo getOneGoods(Integer goodsId);
 }
 

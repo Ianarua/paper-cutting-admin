@@ -96,5 +96,10 @@ public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> i
       return shopInfoMapper.selectList(shopInfoQueryWrapper);
    }
 
+   @Override
+   public ShopInfo getOneShop(Integer shopId) {
+      return shopInfoMapper.selectById(shopId);
+   }
+
 }
 

@@ -64,4 +64,6 @@ public interface IShopInfoService extends IService<ShopInfo> {
      * @return
      */
     List<ShopInfo> listShop(String keyword, Integer pageNum, Integer pageSize);
+
+    ShopInfo getOneShop(Integer shopId);
 }
