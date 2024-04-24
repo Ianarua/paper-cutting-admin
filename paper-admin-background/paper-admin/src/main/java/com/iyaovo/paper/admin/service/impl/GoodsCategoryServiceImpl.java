@@ -14,13 +14,14 @@
 package com.iyaovo.paper.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
 import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.service.IGoodsCategoryService;
+import com.iyaovo.paper.common.api.CommonPage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -57,18 +58,20 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
    }
 
    @Override
-   public List<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
-      PageHelper.startPage(pageNum,pageSize);
+   public Page<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
       QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<GoodsCategory>();
       goodsCategoryQueryWrapper.eq("category_superior_id",parentId);
-      List<GoodsCategory> goodsCategories = goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
-      goodsCategories.forEach(goodsCategory -> {
+      Page<GoodsCategory> page = new Page<>(pageNum, pageSize);
+      Page<GoodsCategory> goodsCategories = goodsCategoryMapper.selectPage(page,goodsCategoryQueryWrapper);
+      List<GoodsCategory> records = goodsCategories.getRecords();
+      records.forEach(goodsCategory -> {
          goodsCategory.setGoodsNumber(getGoodsNumber(goodsCategory.getGoodsCategoryId(),goodsCategory.getCategorySuperiorId()));
       });
+      goodsCategories.setRecords(records);
       return goodsCategories;
    }
 
-   private Long getGoodsNumber(Integer categoryId,Integer parentId){
+   private Long getGoodsNumber(Integer categoryId, Integer parentId){
       final long[] number = {0L};
       if(parentId == 0){
          QueryWrapper queryCategoryWrapper = new QueryWrapper<>();

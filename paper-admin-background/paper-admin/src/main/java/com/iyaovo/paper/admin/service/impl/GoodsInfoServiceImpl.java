@@ -16,10 +16,9 @@ package com.iyaovo.paper.admin.service.impl;
 
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.github.pagehelper.PageHelper;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
-import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
@@ -27,14 +26,11 @@ import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
 import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.mapper.ShopInfoMapper;
 import com.iyaovo.paper.admin.service.IGoodsInfoService;
-import com.iyaovo.paper.common.constant.Constants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @ClassName: GoodsInfoServiceImpl
@@ -82,8 +78,7 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
    }
 
    @Override
-   public List<GoodsInfoVo> list(String keyword, Integer goodsCategoryId, Integer shopId, Integer pageSize, Integer pageNum) {
-      PageHelper.startPage(pageNum,pageSize);
+   public Page<GoodsInfoVo> list(String keyword, Integer goodsCategoryId, Integer shopId, Integer pageSize, Integer pageNum) {
       QueryWrapper<GoodsInfo> goodsInfoQueryWrapper = new QueryWrapper<GoodsInfo>();
       if(!StrUtil.hasBlank(keyword)){
          goodsInfoQueryWrapper.like("goods_name",keyword);
@@ -94,7 +89,12 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
       if(shopId != null){
          goodsInfoQueryWrapper.eq("shop_id",shopId);
       }
-      return goodsInfoToGoodsInfoVo(goodsInfoMapper.selectList(goodsInfoQueryWrapper));
+      Page<GoodsInfo> goodsInfoPage = goodsInfoMapper.selectPage(new Page<>(pageNum,pageSize),goodsInfoQueryWrapper);
+      List<GoodsInfoVo> goodsInfoVos = goodsInfoToGoodsInfoVo(goodsInfoPage.getRecords());
+      Page<GoodsInfoVo> goodsInfoVoPage = new Page<>(pageNum,pageSize,goodsInfoPage.getTotal());
+      goodsInfoVoPage.setRecords(goodsInfoVos);
+      goodsInfoVoPage.setPages(goodsInfoPage.getPages());
+      return goodsInfoVoPage;
    }
 
 
@@ -109,27 +109,22 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
    }
 
 
-
-
    private List<GoodsInfoVo> goodsInfoToGoodsInfoVo(List<GoodsInfo> goodsInfoList){
       List<GoodsInfoVo> goodsInfoVoList = new ArrayList<GoodsInfoVo>();
       goodsInfoList.forEach(goodsInfo ->{
          //entity转为vo
          GoodsInfoVo goodsInfoVo = new GoodsInfoVo(goodsInfo.getGoodsId(),goodsInfo.getGoodsName(),goodsInfo.getGoodsIntroduction(), goodsInfo.getPicUrl(), goodsInfo.getPrice(),
-                 goodsInfo.getPromotionPrice(),goodsInfo.getSoldNumber(),goodsInfo.getTotalNumber(),null,null);
+                 goodsInfo.getPromotionPrice(),goodsInfo.getSoldNumber(),goodsInfo.getTotalNumber(),goodsInfo.getGoodsCategoryId());
          //把店铺信息封装到vo
          goodsInfoVo.setShopInfo(shopInfoMapper.selectById(goodsInfo.getShopId()));
+
          QueryWrapper<GoodsCategory> categorySecondQueryWrapper = new QueryWrapper<GoodsCategory>();
          categorySecondQueryWrapper.eq("goods_category_id",goodsInfo.getGoodsCategoryId());
          GoodsCategory goodsSecondCategory = goodsCategoryMapper.selectOne(categorySecondQueryWrapper);
          QueryWrapper<GoodsCategory> categoryFirstQueryWrapper = new QueryWrapper<GoodsCategory>();
          categoryFirstQueryWrapper.eq("goods_category_id",goodsSecondCategory.getCategorySuperiorId());
          GoodsCategory goodsFirstCategory = goodsCategoryMapper.selectOne(categoryFirstQueryWrapper);
-         //类别信息封装到vo
-         Map<Integer,String> map = new HashMap<Integer,String>();
-         map.put(Constants.FIRST_CATEGORY,goodsFirstCategory.getGoodCategoryName());
-         map.put(Constants.SECOND_CATEGORY,goodsSecondCategory.getGoodCategoryName());
-         goodsInfoVo.setCategoryMap(map);
+        goodsInfoVo.setSuperiorCategoryId(goodsFirstCategory.getGoodsCategoryId());
          goodsInfoVoList.add(goodsInfoVo);
       });
       return goodsInfoVoList;

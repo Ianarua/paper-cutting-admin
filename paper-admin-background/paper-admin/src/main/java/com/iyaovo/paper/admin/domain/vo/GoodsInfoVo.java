@@ -59,7 +59,22 @@ public class GoodsInfoVo {
     @Schema(defaultValue = "店铺")
     private ShopInfo shopInfo;
 
-    @Schema(defaultValue = "分类map")
-    private Map<Integer,String> categoryMap;
+   @Schema(defaultValue = "分类id")
+    private Integer goodsCategoryId;
+
+    @Schema(defaultValue = "分类父id")
+    private Integer SuperiorCategoryId;
+
+    public GoodsInfoVo(Integer goodsId, String goodsName, String goodsIntroduction, String picUrl, BigDecimal price, BigDecimal promotionPrice, Integer soldNumber, Integer totalNumber, Integer goodsCategoryId) {
+        this.goodsId = goodsId;
+        this.goodsName = goodsName;
+        this.goodsIntroduction = goodsIntroduction;
+        this.picUrl = picUrl;
+        this.price = price;
+        this.promotionPrice = promotionPrice;
+        this.soldNumber = soldNumber;
+        this.totalNumber = totalNumber;
+        this.goodsCategoryId = goodsCategoryId;
+    }
 }
 

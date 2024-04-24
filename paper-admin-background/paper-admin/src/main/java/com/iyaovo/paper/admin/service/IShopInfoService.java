@@ -1,5 +1,6 @@
 package com.iyaovo.paper.admin.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.iyaovo.paper.admin.domain.dto.ShopInfoParam;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
@@ -63,7 +64,7 @@ public interface IShopInfoService extends IService<ShopInfo> {
      * @param pageSize
      * @return
      */
-    List<ShopInfo> listShop(String keyword, Integer pageNum, Integer pageSize);
+    Page<ShopInfo> listShop(String keyword, Integer pageNum, Integer pageSize);
 
     ShopInfo getOneShop(Integer shopId);
 }

@@ -67,8 +67,7 @@ public class GoodsCategoryController {
     public CommonResult<CommonPage<GoodsCategory>> getList(@PathVariable Long parentId,
                                                              @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                              @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<GoodsCategory> goodsCategoryList = iGoodsCategoryService.getList(parentId, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(goodsCategoryList));
+        return CommonResult.success(CommonPage.restPage(iGoodsCategoryService.getList(parentId, pageSize, pageNum)));
     }
 
 

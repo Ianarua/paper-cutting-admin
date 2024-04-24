@@ -67,10 +67,8 @@ public class GoodsController {
                                                           @RequestParam(value = "shopId",required = false) Integer shopId,
                                                          @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                          @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        System.out.println(keyword);
-        System.out.println(goodsCategoryId);
-        List<GoodsInfoVo> goodsInfoVoList = iGoodsInfoService.list(keyword,goodsCategoryId,shopId, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(goodsInfoVoList));
+
+        return CommonResult.success(CommonPage.restPage(iGoodsInfoService.list(keyword,goodsCategoryId,shopId, pageSize, pageNum)));
     }
 
 
@@ -83,7 +81,6 @@ public class GoodsController {
         return CommonResult.success(goodsInfoVoList);
     }
 
-
-
+//    TODO 删除商品
 
 }

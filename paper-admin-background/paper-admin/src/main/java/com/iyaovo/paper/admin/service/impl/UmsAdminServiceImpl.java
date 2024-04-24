@@ -2,7 +2,6 @@ package com.iyaovo.paper.admin.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
-import com.github.pagehelper.PageHelper;
 import com.iyaovo.paper.admin.bo.AdminUserDetails;
 import com.iyaovo.paper.admin.domain.dto.UmsAdminParam;
 import com.iyaovo.paper.admin.domain.dto.UpdateAdminPasswordParam;
@@ -161,7 +160,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
 
     @Override
     public List<UmsAdmin> list(String keyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
+//        PageHelper.startPage(pageNum, pageSize);
         UmsAdminExample example = new UmsAdminExample();
         UmsAdminExample.Criteria criteria = example.createCriteria();
         if (!StrUtil.isEmpty(keyword)) {

@@ -14,6 +14,7 @@
 package com.iyaovo.paper.admin.service;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoQueryParam;
@@ -54,7 +55,7 @@ public interface IGoodsInfoService extends IService<GoodsInfo> {
     * @param pageNum
     * @return
     */
-   List<GoodsInfoVo> list(String keyword,
+   Page<GoodsInfoVo> list(String keyword,
                           Integer goodsCategoryId,
                           Integer shopId,
                           Integer pageSize,

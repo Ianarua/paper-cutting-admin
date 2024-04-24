@@ -1,5 +1,6 @@
 package com.iyaovo.paper.admin.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iyaovo.paper.admin.domain.dto.UmsAdminParam;
 import com.iyaovo.paper.admin.domain.dto.UpdateAdminPasswordParam;
 import com.iyaovo.paper.admin.domain.entity.UmsAdmin;
