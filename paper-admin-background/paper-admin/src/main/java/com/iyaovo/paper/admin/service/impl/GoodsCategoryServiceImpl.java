@@ -19,6 +19,7 @@ import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
+import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.service.IGoodsCategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,7 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
 
    private final GoodsCategoryMapper goodsCategoryMapper;
 
+   private final GoodsInfoMapper goodsInfoMapper;
 
    @Override
    public int create(GoodsCategoryParam goodsCategoryParam) {
@@ -59,7 +61,30 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
       PageHelper.startPage(pageNum,pageSize);
       QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<GoodsCategory>();
       goodsCategoryQueryWrapper.eq("category_superior_id",parentId);
-      return goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
+      List<GoodsCategory> goodsCategories = goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
+      goodsCategories.forEach(goodsCategory -> {
+         goodsCategory.setGoodsNumber(getGoodsNumber(goodsCategory.getGoodsCategoryId(),goodsCategory.getCategorySuperiorId()));
+      });
+      return goodsCategories;
+   }
+
+   private Long getGoodsNumber(Integer categoryId,Integer parentId){
+      final long[] number = {0L};
+      if(parentId == 0){
+         QueryWrapper queryCategoryWrapper = new QueryWrapper<>();
+         queryCategoryWrapper.eq("category_superior_id",categoryId);
+         List<GoodsCategory> goodsCategories = goodsCategoryMapper.selectList(queryCategoryWrapper);
+         goodsCategories.forEach(goodsCategory -> {
+            QueryWrapper queryGoodsNumberWrapper = new QueryWrapper<>();
+            queryGoodsNumberWrapper.eq("goods_category_id",goodsCategory.getGoodsCategoryId());
+            number[0] += goodsInfoMapper.selectCount(queryGoodsNumberWrapper);
+         });
+         return number[0];
+      }else{
+         QueryWrapper queryGoodsNumberWrapper = new QueryWrapper<>();
+         queryGoodsNumberWrapper.eq("goods_category_id",categoryId);
+         return goodsInfoMapper.selectCount(queryGoodsNumberWrapper);
+      }
    }
 
    @Override

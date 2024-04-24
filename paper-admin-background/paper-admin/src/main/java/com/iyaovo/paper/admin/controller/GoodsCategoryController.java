@@ -65,19 +65,13 @@ public class GoodsCategoryController {
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<GoodsCategory>> getList(@PathVariable Long parentId,
-                                                                @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
-                                                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<GoodsCategory> goodsCategory = iGoodsCategoryService.getList(parentId, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(goodsCategory));
+                                                             @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                                                             @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+        List<GoodsCategory> goodsCategoryList = iGoodsCategoryService.getList(parentId, pageSize, pageNum);
+        return CommonResult.success(CommonPage.restPage(goodsCategoryList));
     }
 
-//    @Operation(summary = "根据id获取商品分类")
-//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public CommonResult<PmsProductCategory> getItem(@PathVariable Long id) {
-//        PmsProductCategory productCategory = iGoodsCategoryService.getItem(id);
-//        return CommonResult.success(productCategory);
-//    }
+
 
     @Operation(summary = "删除商品分类")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)

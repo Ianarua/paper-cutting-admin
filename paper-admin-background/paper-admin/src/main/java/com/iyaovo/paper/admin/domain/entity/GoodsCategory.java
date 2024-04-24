@@ -59,6 +59,17 @@ public class GoodsCategory {
    @TableField("category_superior_id")
    private Integer categorySuperiorId;
 
+   /**
+    * 该类别下商品的数量
+    */
+   @TableField(exist = false)
+   private Long goodsNumber;
 
+   public GoodsCategory(Integer goodsCategoryId, String goodCategoryName, String picUrl, Integer categorySuperiorId) {
+      this.goodsCategoryId = goodsCategoryId;
+      this.goodCategoryName = goodCategoryName;
+      this.picUrl = picUrl;
+      this.categorySuperiorId = categorySuperiorId;
+   }
 }
 
