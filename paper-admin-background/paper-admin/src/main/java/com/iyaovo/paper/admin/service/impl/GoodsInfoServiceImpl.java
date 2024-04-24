@@ -100,7 +100,6 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
 
    @Override
    public List<GoodsInfoVo> list(String keyWord) {
-      System.out.println("service");
       QueryWrapper<GoodsInfo> goodsInfoQueryWrapper = new QueryWrapper<GoodsInfo>();
       if(!StrUtil.hasBlank(keyWord)){
          goodsInfoQueryWrapper.like("goods_name",keyWord);
