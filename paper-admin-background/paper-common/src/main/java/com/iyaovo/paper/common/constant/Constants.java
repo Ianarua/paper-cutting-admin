@@ -36,6 +36,10 @@ public class Constants {
     */
    public static final Integer SECOND_CATEGORY = 1;
 
+   /**
+    * 商品管理员
+    */
+   public static final Long GOODS_MANAGER = 1L;
 
 }
 

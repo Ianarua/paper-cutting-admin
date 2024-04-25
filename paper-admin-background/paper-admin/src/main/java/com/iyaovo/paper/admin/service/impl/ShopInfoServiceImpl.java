@@ -18,12 +18,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.iyaovo.paper.admin.domain.dto.ShopInfoParam;
-import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
 import com.iyaovo.paper.admin.domain.entity.ShopInfo;
+import com.iyaovo.paper.admin.domain.entity.UmsAdminShopRelation;
 import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.mapper.ShopInfoMapper;
+import com.iyaovo.paper.admin.mapper.UmsAdminShopRelationMapper;
 import com.iyaovo.paper.admin.service.IShopInfoService;
+import com.iyaovo.paper.admin.service.UmsAdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +43,9 @@ public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> i
 
    private final ShopInfoMapper shopInfoMapper;
    private final GoodsInfoMapper goodsInfoMapper;
+
+   private final UmsAdminService umsAdminService;
+   private final UmsAdminShopRelationMapper umsAdminShopRelationMapper;
 
    @Override
    public List<GoodsInfo> showGoodsByShopId(Integer shopId, Integer pageNum, Integer pageSize) {
@@ -66,12 +71,17 @@ public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> i
 
    @Override
    public int createShop(ShopInfoParam shopInfoParam) {
-      return shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getName(), shopInfoParam.getLogo()));
+      System.out.println(shopInfoParam.getShopName());
+      int insert = shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getShopName(), shopInfoParam.getPicUrl()));
+      QueryWrapper<ShopInfo> shopInfoQueryWrapper = new QueryWrapper<ShopInfo>();
+      shopInfoQueryWrapper.eq("shop_name",shopInfoParam.getShopName());
+      umsAdminShopRelationMapper.insert(new UmsAdminShopRelation(null,umsAdminService.getUmsAdmin().getId(),shopInfoMapper.selectOne(shopInfoQueryWrapper).getShopId()));
+      return insert;
    }
 
    @Override
    public int updateShop(Integer id, ShopInfoParam shopInfoParam) {
-      return shopInfoMapper.updateById(new ShopInfo(id,shopInfoParam.getName(), shopInfoParam.getLogo()));
+      return shopInfoMapper.updateById(new ShopInfo(id,shopInfoParam.getShopName(), shopInfoParam.getPicUrl()));
    }
 
 

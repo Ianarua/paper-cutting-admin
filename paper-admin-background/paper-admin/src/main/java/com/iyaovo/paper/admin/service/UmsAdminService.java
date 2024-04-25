@@ -17,6 +17,12 @@ import java.util.List;
  */
 public interface UmsAdminService {
     /**
+     * 获取当前用户
+     * @return
+     */
+    UmsAdmin getUmsAdmin();
+
+    /**
      * 根据用户名获取后台管理员
      */
     UmsAdmin getAdminByUsername(String username);

@@ -20,13 +20,15 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.iyaovo.paper.admin.domain.dto.GoodsInfoParam;
 import com.iyaovo.paper.admin.domain.dto.IdsParam;
-import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
-import com.iyaovo.paper.admin.domain.entity.GoodsInfo;
+import com.iyaovo.paper.admin.domain.entity.*;
 import com.iyaovo.paper.admin.domain.vo.GoodsInfoVo;
 import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
 import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.mapper.ShopInfoMapper;
+import com.iyaovo.paper.admin.mapper.UmsAdminShopRelationMapper;
 import com.iyaovo.paper.admin.service.IGoodsInfoService;
+import com.iyaovo.paper.admin.service.UmsAdminService;
+import com.iyaovo.paper.common.constant.Constants;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -49,6 +51,9 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
 
    private final GoodsCategoryMapper goodsCategoryMapper;
 
+   private final UmsAdminShopRelationMapper umsAdminShopRelationMapper;
+
+   private final UmsAdminService umsAdminService;
    @Override
    public GoodsInfoVo getOneGoods(Integer goodsId) {
       List<GoodsInfo> goods = new ArrayList<>();
@@ -94,6 +99,15 @@ public class GoodsInfoServiceImpl extends ServiceImpl<GoodsInfoMapper, GoodsInfo
       }
       if(shopId != null){
          goodsInfoQueryWrapper.eq("shop_id",shopId);
+      }
+      //通过用户角色（店铺）来决定能看到什么商品
+      Long adminId = umsAdminService.getUmsAdmin().getId();
+      List<UmsRole> roleList = umsAdminService.getRoleList(adminId);
+      if(roleList.get(0).getId() == Constants.GOODS_MANAGER){
+         QueryWrapper<UmsAdminShopRelation> umsAdminShopRelationQueryWrapper = new QueryWrapper<>();
+         umsAdminShopRelationQueryWrapper.eq("admin_id",adminId);
+         UmsAdminShopRelation umsAdminShopRelation = umsAdminShopRelationMapper.selectOne(umsAdminShopRelationQueryWrapper);
+         goodsInfoQueryWrapper.eq("shop_id",umsAdminShopRelation.getShopId());
       }
       Page<GoodsInfo> goodsInfoPage = goodsInfoMapper.selectPage(new Page<>(pageNum,pageSize),goodsInfoQueryWrapper);
       List<GoodsInfoVo> goodsInfoVos = goodsInfoToGoodsInfoVo(goodsInfoPage.getRecords());
