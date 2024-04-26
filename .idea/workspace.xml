@@ -4,77 +4,293 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9df6cd69-b6fd-4f34-a4d7-27d752ec174d" name="Changes" comment="merge">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/document/sql/paper-cutting.sql" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/document/sql/paper-cutting.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/application.yml" afterDir="false" />
+    <list default="true" id="36848386-29cb-4b4f-aa21-d12f07658b58" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_3_starter_1_2_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_15_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_4_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_knife4j_core_4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_knife4j_openapi3_jakarta_spring_boot_starter_4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_knife4j_openapi3_ui_4_4_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_21_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_8_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_33.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_5_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_2_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_commons_1_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_observation_1_11_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_97_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_5_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_jakarta_2_2_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_jakarta_2_2_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_jakarta_2_2_19.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_2_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_3_0_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_4_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_14_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_14_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_2_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_20_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_20_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_10_1_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_10_1_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_10_1_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_24_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_5_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_5_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_2_0_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_common_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_api_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_ui_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_3_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_6_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_6_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_6_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_6_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_swagger_ui_5_10_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_9_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_33.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin-background.iml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin-background.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/paper-admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/paper-admin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/java/com/iyaovo/paper/admin/service/impl/ShopInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/java/com/iyaovo/paper/admin/service/impl/ShopInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/config/MyBatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/config/MyBatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsCategoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/ShopController.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/ShopController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/dto/GoodsCategoryParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/dto/GoodsCategoryParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/dto/ShopInfoParam.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/dto/ShopInfoParam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/entity/GoodsCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/entity/GoodsCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/vo/GoodsInfoVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/domain/vo/GoodsInfoVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IGoodsCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IGoodsCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IGoodsInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IGoodsInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IShopInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/IShopInfoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/GoodsCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/GoodsCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/GoodsInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/GoodsInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/ShopInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/ShopInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsAdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsAdminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsMenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsMenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsResourceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsResourceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsRoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsRoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-common/paper-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-common/paper-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-common/target/classes/com/iyaovo/paper/common/api/CommonPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-common/target/classes/com/iyaovo/paper/common/api/CommonPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-foreground/paper-foreground.iml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-foreground/paper-foreground.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-security/paper-security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-security/paper-security.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/brand.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/brand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/companyAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/companyAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/coupon.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/coupon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/couponHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/couponHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/flash.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/flash.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/productAttr.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/productAttr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/productAttrCate.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/productAttrCate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/productCate.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/productCate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/components/Breadcrumb/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/components/Breadcrumb/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/oms/apply/applyDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/oms/apply/applyDetail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/oms/order/deliverOrderList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/oms/order/deliverOrderList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/subject.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/subject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/components/Upload/multiUpload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/components/Upload/multiUpload.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/components/BrandDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/components/BrandDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/brand/update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductAttrDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductAttrDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductInfoDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/components/ProductInfoDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/product/update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/addProductAttr.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/addProductAttr.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/components/ProductAttrDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/components/ProductAttrDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/productAttrList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/productAttrList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/updateProductAttr.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productAttr/updateProductAttr.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/add.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/components/ProductCateDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/components/ProductCateDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/update.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/pms/productCate/update.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/paper-admin-web/.editorconfig" previewFile="$PROJECT_DIR$/paper-admin-web/src/router/index.js" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ianarua&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="b313cbdb-4be5-445f-a4c4-cfff1a540d6d" />
+        <option name="url" value="git@github.com:Ianarua/paper-cutting-admin.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="localRepository" value="E:\Program Files\apache-maven-3.3.9-bin\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../Program Files/apache-maven-3.3.9-bin/apache-maven-3.3.9" />
-        <option name="useMavenConfig" value="true" />
-        <option name="userSettingsFile" value="E:\Program Files\apache-maven-3.3.9-bin\apache-maven-3.3.9\conf\settings.xml" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="#JAVA_HOME" />
-    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
-  </component>
-  <component name="ProjectId" id="2fUPBjQ5woadSzJQAEYsYIWadcZ" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2fB6BTJk5vHUdERnc4Sy1PIxL3D" />
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/code/Web/React Native/PaperCutting/paper-cutting-admin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;826145cf76a2347fe457f6ed01d290ad&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\WebStorm 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\code\Web\React Native\PaperCutting\paper-cutting-admin\paper-admin-web" />
+      <recent name="C:\code\Web\React Native\PaperCutting\paper-cutting-admin\mall" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.PaperAdminApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mall-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.mall.MallAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mall-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.mall.demo.MallDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallPortalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mall-portal" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.mall.portal.MallPortalApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallSearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mall-search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.mall.search.MallSearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PaperAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="paper-admin" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.iyaovo.paper.admin.PaperAdminApplication" />
@@ -89,40 +305,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/paper-admin-web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="9df6cd69-b6fd-4f34-a4d7-27d752ec174d" name="Changes" comment="" />
-      <created>1713852549988</created>
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="36848386-29cb-4b4f-aa21-d12f07658b58" name="更改" comment="" />
+      <created>1713261988061</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1713852549988</updated>
-      <workItem from="1713852551513" duration="647000" />
+      <updated>1713261988061</updated>
+      <workItem from="1713261989054" duration="3713000" />
+      <workItem from="1713332043195" duration="1270000" />
+      <workItem from="1713497743885" duration="1547000" />
+      <workItem from="1713660251626" duration="3970000" />
+      <workItem from="1713775015047" duration="487000" />
+      <workItem from="1713793895247" duration="1824000" />
+      <workItem from="1713834075380" duration="2407000" />
+      <workItem from="1713851934134" duration="775000" />
+      <workItem from="1713852868854" duration="41000" />
+      <workItem from="1713852923145" duration="3428000" />
+      <workItem from="1713928070989" duration="6336000" />
+      <workItem from="1714014571864" duration="606000" />
+      <workItem from="1714036050283" duration="834000" />
+      <workItem from="1714108282578" duration="1038000" />
+      <workItem from="1714109604963" duration="588000" />
+      <workItem from="1714110202586" duration="1621000" />
     </task>
-    <task id="LOCAL-00001" summary="merge">
-      <created>1713852686781</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1713852686781</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

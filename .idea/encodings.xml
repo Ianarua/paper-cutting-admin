@@ -2,13 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paper-admin-background/paper-common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/paper-admin-background/paper-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paper-admin-background/paper-foreground/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/paper-admin-background/paper-foreground/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paper-admin-background/paper-security/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/paper-admin-background/paper-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paper-admin-background/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paper-admin-background/src/main/resources" charset="UTF-8" />
   </component>

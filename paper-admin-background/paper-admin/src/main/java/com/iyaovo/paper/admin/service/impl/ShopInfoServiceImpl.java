@@ -71,12 +71,16 @@ public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> i
 
    @Override
    public int createShop(ShopInfoParam shopInfoParam) {
+<<<<<<< Updated upstream
       System.out.println(shopInfoParam.getShopName());
       int insert = shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getShopName(), shopInfoParam.getPicUrl()));
       QueryWrapper<ShopInfo> shopInfoQueryWrapper = new QueryWrapper<ShopInfo>();
       shopInfoQueryWrapper.eq("shop_name",shopInfoParam.getShopName());
       umsAdminShopRelationMapper.insert(new UmsAdminShopRelation(null,umsAdminService.getUmsAdmin().getId(),shopInfoMapper.selectOne(shopInfoQueryWrapper).getShopId()));
       return insert;
+=======
+      return shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getShopName(), shopInfoParam.getPicUrl()));
+>>>>>>> Stashed changes
    }
 
    @Override

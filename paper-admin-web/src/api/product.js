@@ -16,11 +16,12 @@ export function fetchSimpleList (params) {
     });
 }
 
-export function updateDeleteStatus (params) {
+export function updateDelete (data) {
+    console.log('data', data);
     return request({
-        url: '/goods/update/deleteStatus',
+        url: '/goods/delete',
         method: 'post',
-        params: params
+        data: data
     });
 }
 
@@ -49,24 +50,46 @@ export function updatePublishStatus (params) {
 }
 
 export function createProduct (data) {
+    console.log('data------', data);
+    const goodsInfoParam = {
+        name: data.name,
+        logo: data.logo,
+        introduction: data.introduction,
+        goodsCategoryId: data.goodsCategoryId,
+        shopId: data.shopId,
+        price: data.price,
+        promotionPrice: data.promotionPrice,
+        totalNumber: data.totalNumber
+    };
     return request({
         url: '/goods/create',
         method: 'post',
-        data: data
+        data: goodsInfoParam
     });
 }
 
 export function updateProduct (id, data) {
+    console.log('data------', data);
+    const goodsInfoParam = {
+        name: data.name,
+        logo: data.logo,
+        introduction: data.introduction,
+        goodsCategoryId: data.goodsCategoryId,
+        shopId: data.shopId,
+        price: data.price,
+        promotionPrice: data.promotionPrice,
+        totalNumber: data.totalNumber
+    };
     return request({
         url: '/goods/update/' + id,
         method: 'post',
-        data: data
+        data: goodsInfoParam
     });
 }
 
 export function getProduct (id) {
     return request({
-        url: '/goods/updateInfo/' + id,
+        url: '/goods/' + id,
         method: 'get'
     });
 }

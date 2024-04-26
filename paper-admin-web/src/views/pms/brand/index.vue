@@ -15,8 +15,11 @@
             <div style="margin-top: 15px">
                 <el-form :inline="true" :model="listQuery" size="small" label-width="140px">
                     <el-form-item label="输入搜索：">
-                        <el-input style="width: 203px" v-model="listQuery.keyword"
-                                  placeholder="品牌名称/关键字"></el-input>
+                        <el-input
+                            style="width: 203px"
+                            v-model="listQuery.keyword"
+                            placeholder="品牌名称/关键字"
+                        />
                     </el-form-item>
                 </el-form>
             </div>
@@ -27,7 +30,8 @@
             <el-button
                 class="btn-add"
                 @click="addBrand()"
-                size="mini">
+                size="mini"
+            >
                 添加
             </el-button>
         </el-card>
@@ -37,91 +41,97 @@
                       style="width: 100%"
                       @selection-change="handleSelectionChange"
                       v-loading="listLoading"
-                      border>
-                <el-table-column type="selection" width="60" align="center"></el-table-column>
+                      border
+            >
+                <el-table-column type="selection" width="60" align="center"/>
                 <el-table-column label="编号" width="100" align="center">
-                    <template slot-scope="scope">{{ scope.row.id }}</template>
+                    <template slot-scope="scope">{{ scope.row.shopId }}</template>
                 </el-table-column>
                 <el-table-column label="品牌名称" align="center">
-                    <template slot-scope="scope">{{ scope.row.name }}</template>
+                    <template slot-scope="scope">{{ scope.row.shopName }}</template>
                 </el-table-column>
-                <el-table-column label="品牌首字母" width="100" align="center">
-                    <template slot-scope="scope">{{ scope.row.firstLetter }}</template>
-                </el-table-column>
-                <el-table-column label="排序" width="100" align="center">
-                    <template slot-scope="scope">{{ scope.row.sort }}</template>
-                </el-table-column>
-                <el-table-column label="品牌制造商" width="100" align="center">
-                    <template slot-scope="scope">
-                        <el-switch
-                            @change="handleFactoryStatusChange(scope.$index, scope.row)"
-                            :active-value="1"
-                            :inactive-value="0"
-                            v-model="scope.row.factoryStatus">
-                        </el-switch>
-                    </template>
-                </el-table-column>
-                <el-table-column label="是否显示" width="100" align="center">
-                    <template slot-scope="scope">
-                        <el-switch
-                            @change="handleShowStatusChange(scope.$index, scope.row)"
-                            :active-value="1"
-                            :inactive-value="0"
-                            v-model="scope.row.showStatus">
-                        </el-switch>
-                    </template>
-                </el-table-column>
-                <el-table-column label="相关" width="220" align="center">
-                    <template slot-scope="scope">
-                        <span>商品：</span>
-                        <el-button
-                            size="mini"
-                            type="text"
-                            @click="getProductList(scope.$index, scope.row)">100
-                        </el-button>
-                        <span>评价：</span>
-                        <el-button
-                            size="mini"
-                            type="text"
-                            @click="getProductCommentList(scope.$index, scope.row)">1000
-                        </el-button>
-                    </template>
-                </el-table-column>
+                <!--                <el-table-column label="品牌首字母" width="100" align="center">-->
+                <!--                    <template slot-scope="scope">{{ scope.row.firstLetter }}</template>-->
+                <!--                </el-table-column>-->
+                <!--                <el-table-column label="排序" width="100" align="center">-->
+                <!--                    <template slot-scope="scope">{{ scope.row.sort }}</template>-->
+                <!--                </el-table-column>-->
+                <!--                <el-table-column label="品牌制造商" width="100" align="center">-->
+                <!--                    <template slot-scope="scope">-->
+                <!--                        <el-switch-->
+                <!--                            @change="handleFactoryStatusChange(scope.$index, scope.row)"-->
+                <!--                            :active-value="1"-->
+                <!--                            :inactive-value="0"-->
+                <!--                            v-model="scope.row.factoryStatus">-->
+                <!--                        </el-switch>-->
+                <!--                    </template>-->
+                <!--                </el-table-column>-->
+                <!--                <el-table-column label="是否显示" width="100" align="center">-->
+                <!--                    <template slot-scope="scope">-->
+                <!--                        <el-switch-->
+                <!--                            @change="handleShowStatusChange(scope.$index, scope.row)"-->
+                <!--                            :active-value="1"-->
+                <!--                            :inactive-value="0"-->
+                <!--                            v-model="scope.row.showStatus">-->
+                <!--                        </el-switch>-->
+                <!--                    </template>-->
+                <!--                </el-table-column>-->
+                <!--                <el-table-column label="相关" width="220" align="center">-->
+                <!--                    <template slot-scope="scope">-->
+                <!--                        <span>商品：</span>-->
+                <!--                        <el-button-->
+                <!--                            size="mini"-->
+                <!--                            type="text"-->
+                <!--                            @click="getProductList(scope.$index, scope.row)">100-->
+                <!--                        </el-button>-->
+                <!--                        <span>评价：</span>-->
+                <!--                        <el-button-->
+                <!--                            size="mini"-->
+                <!--                            type="text"-->
+                <!--                            @click="getProductCommentList(scope.$index, scope.row)">1000-->
+                <!--                        </el-button>-->
+                <!--                    </template>-->
+                <!--                </el-table-column>-->
                 <el-table-column label="操作" width="200" align="center">
                     <template slot-scope="scope">
                         <el-button
                             size="mini"
-                            @click="handleUpdate(scope.$index, scope.row)">编辑
+                            @click="handleUpdate(scope.$index, scope.row)"
+                        >
+                            编辑
                         </el-button>
                         <el-button
                             size="mini"
                             type="danger"
-                            @click="handleDelete(scope.$index, scope.row)">删除
+                            @click="handleDelete(scope.$index, scope.row)"
+                        >
+                            删除
                         </el-button>
                     </template>
                 </el-table-column>
             </el-table>
         </div>
-        <div class="batch-operate-container">
-            <el-select
-                size="small"
-                v-model="operateType" placeholder="批量操作">
-                <el-option
-                    v-for="item in operates"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
-                </el-option>
-            </el-select>
-            <el-button
-                style="margin-left: 20px"
-                class="search-button"
-                @click="handleBatchOperate()"
-                type="primary"
-                size="small">
-                确定
-            </el-button>
-        </div>
+        <!--        <div class="batch-operate-container">-->
+        <!--            &lt;!&ndash;            <el-select&ndash;&gt;-->
+        <!--            &lt;!&ndash;                size="small"&ndash;&gt;-->
+        <!--            &lt;!&ndash;                v-model="operateType" placeholder="批量操作"&ndash;&gt;-->
+        <!--            &lt;!&ndash;            >&ndash;&gt;-->
+        <!--            &lt;!&ndash;                <el-option&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    v-for="item in operates"&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    :key="item.value"&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    :label="item.label"&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    :value="item.value"&ndash;&gt;-->
+        <!--            &lt;!&ndash;                />&ndash;&gt;-->
+        <!--            &lt;!&ndash;            </el-select>&ndash;&gt;-->
+        <!--            <el-button-->
+        <!--                style="margin-left: 20px"-->
+        <!--                class="search-button"-->
+        <!--                @click="handleBatchOperate()"-->
+        <!--                type="primary"-->
+        <!--                size="small">-->
+        <!--                确定-->
+        <!--            </el-button>-->
+        <!--        </div>-->
         <div class="pagination-container">
             <el-pagination
                 background
@@ -131,7 +141,8 @@
                 :page-size="listQuery.pageSize"
                 :page-sizes="[5,10,15]"
                 :current-page.sync="listQuery.pageNum"
-                :total="total">
+                :total="total"
+            >
             </el-pagination>
         </div>
     </div>
@@ -183,7 +194,7 @@ export default {
             this.multipleSelection = val;
         },
         handleUpdate (index, row) {
-            this.$router.push({ path: '/pms/updateBrand', query: { id: row.id } });
+            this.$router.push({ path: '/pms/updateBrand', query: { id: row.shopId } });
         },
         handleDelete (index, row) {
             this.$confirm('是否要删除该品牌', '提示', {
@@ -191,7 +202,7 @@ export default {
                 cancelButtonText: '取消',
                 type: 'warning'
             }).then(() => {
-                deleteBrand(row.id).then(response => {
+                deleteBrand(row.shopId).then(response => {
                     this.$message({
                         message: '删除成功',
                         type: 'success',

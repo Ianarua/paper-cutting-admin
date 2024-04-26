@@ -1,40 +1,40 @@
 <template> 
     <el-card class="form-container" shadow="never">
         <el-form :model="brand" :rules="rules" ref="brandFrom" label-width="150px">
-            <el-form-item label="品牌名称：" prop="name">
-                <el-input v-model="brand.name"></el-input>
+            <el-form-item label="品牌名称：" prop="shopName">
+                <el-input v-model="brand.shopName"></el-input>
             </el-form-item>
-            <el-form-item label="品牌首字母：">
-                <el-input v-model="brand.firstLetter"></el-input>
+            <!--            <el-form-item label="品牌首字母：">-->
+            <!--                <el-input v-model="brand.firstLetter"></el-input>-->
+            <!--            </el-form-item>-->
+            <el-form-item label="品牌LOGO：" prop="picUrl">
+                <single-upload v-model="brand.picUrl"></single-upload>
             </el-form-item>
-            <el-form-item label="品牌LOGO：" prop="logo">
-                <single-upload v-model="brand.logo"></single-upload>
-            </el-form-item>
-            <el-form-item label="品牌专区大图：">
-                <single-upload v-model="brand.bigPic"></single-upload>
-            </el-form-item>
-            <el-form-item label="品牌故事：">
-                <el-input
-                    placeholder="请输入内容"
-                    type="textarea"
-                    v-model="brand.brandStory"
-                    :autosize="true"></el-input>
-            </el-form-item>
-            <el-form-item label="排序：" prop="sort">
-                <el-input v-model.number="brand.sort"></el-input>
-            </el-form-item>
-            <el-form-item label="是否显示：">
-                <el-radio-group v-model="brand.showStatus">
-                    <el-radio :label="1">是</el-radio>
-                    <el-radio :label="0">否</el-radio>
-                </el-radio-group>
-            </el-form-item>
-            <el-form-item label="品牌制造商：">
-                <el-radio-group v-model="brand.factoryStatus">
-                    <el-radio :label="1">是</el-radio>
-                    <el-radio :label="0">否</el-radio>
-                </el-radio-group>
-            </el-form-item>
+            <!--            <el-form-item label="品牌专区大图：">-->
+            <!--                <single-upload v-model="brand.bigPic"></single-upload>-->
+            <!--            </el-form-item>-->
+            <!--            <el-form-item label="品牌故事：">-->
+            <!--                <el-input-->
+            <!--                    placeholder="请输入内容"-->
+            <!--                    type="textarea"-->
+            <!--                    v-model="brand.brandStory"-->
+            <!--                    :autosize="true"></el-input>-->
+            <!--            </el-form-item>-->
+            <!--            <el-form-item label="排序：" prop="sort">-->
+            <!--                <el-input v-model.number="brand.sort"></el-input>-->
+            <!--            </el-form-item>-->
+            <!--            <el-form-item label="是否显示：">-->
+            <!--                <el-radio-group v-model="brand.showStatus">-->
+            <!--                    <el-radio :label="1">是</el-radio>-->
+            <!--                    <el-radio :label="0">否</el-radio>-->
+            <!--                </el-radio-group>-->
+            <!--            </el-form-item>-->
+            <!--            <el-form-item label="品牌制造商：">-->
+            <!--                <el-radio-group v-model="brand.factoryStatus">-->
+            <!--                    <el-radio :label="1">是</el-radio>-->
+            <!--                    <el-radio :label="0">否</el-radio>-->
+            <!--                </el-radio-group>-->
+            <!--            </el-form-item>-->
             <el-form-item>
                 <el-button type="primary" @click="onSubmit('brandFrom')">提交</el-button>
                 <el-button v-if="!isEdit" @click="resetForm('brandFrom')">重置</el-button>
@@ -47,14 +47,14 @@ import { createBrand, getBrand, updateBrand } from '@/api/brand';
 import SingleUpload from '@/components/Upload/singleUpload';
 
 const defaultBrand = {
-    bigPic: '',
-    brandStory: '',
-    factoryStatus: 0,
-    firstLetter: '',
-    logo: '',
-    name: '',
-    showStatus: 0,
-    sort: 0
+    // picUrl: '',
+    // brandStory: '',
+    // factoryStatus: 0,
+    // firstLetter: '',
+    // logo: '',
+    shopName: '',
+    // showStatus: 0,
+    // sort: 0
 };
 export default {
     name: 'BrandDetail',
@@ -86,6 +86,7 @@ export default {
         if (this.isEdit) {
             getBrand(this.$route.query.id).then(response => {
                 this.brand = response.data;
+                console.log('this.brand', this.brand);
             });
         } else {
             this.brand = Object.assign({}, defaultBrand);
