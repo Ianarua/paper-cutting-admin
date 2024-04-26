@@ -9,6 +9,7 @@ export function fetchList (params) {
 }
 
 export function createBrand (data) {
+    data.picUrl = 'abbbbb'
     return request({
         url: '/shop/create',
         method: 'post',
