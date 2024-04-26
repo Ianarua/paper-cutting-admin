@@ -30,7 +30,7 @@ public interface UmsAdminService {
     /**
      * 注册功能
      */
-    UmsAdmin register(UmsAdminParam umsAdminParam);
+    UmsAdmin create(UmsAdminParam umsAdminParam);
 
     /**
      * 登录功能
@@ -96,4 +96,6 @@ public interface UmsAdminService {
      * 获取缓存服务
      */
     UmsAdminCacheService getCacheService();
+
+    UmsAdmin register(UmsAdminParam umsAdminParam);
 }

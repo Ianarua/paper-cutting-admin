@@ -71,7 +71,6 @@ public class ShopInfoServiceImpl extends ServiceImpl<ShopInfoMapper, ShopInfo> i
 
    @Override
    public int createShop(ShopInfoParam shopInfoParam) {
-      System.out.println(shopInfoParam.getShopName());
       int insert = shopInfoMapper.insert(new ShopInfo(null, shopInfoParam.getShopName(), shopInfoParam.getPicUrl()));
       QueryWrapper<ShopInfo> shopInfoQueryWrapper = new QueryWrapper<ShopInfo>();
       shopInfoQueryWrapper.eq("shop_name",shopInfoParam.getShopName());
