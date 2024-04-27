@@ -13,11 +13,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="paper-admin" target="17" />
-      <module name="paper-admin-background" target="17" />
-      <module name="paper-common" target="17" />
-      <module name="paper-foreground" target="17" />
-      <module name="paper-security" target="17" />
+      <module name="mall" target="1.8" />
+      <module name="mall-admin" target="1.8" />
+      <module name="mall-common" target="1.8" />
+      <module name="mall-demo" target="1.8" />
+      <module name="mall-mbg" target="1.8" />
+      <module name="mall-portal" target="1.8" />
+      <module name="mall-search" target="1.8" />
+      <module name="mall-security" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

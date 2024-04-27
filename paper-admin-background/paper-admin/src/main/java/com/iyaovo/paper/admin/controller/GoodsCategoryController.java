@@ -27,7 +27,15 @@ public class GoodsCategoryController {
     @Autowired
     private IGoodsCategoryService iGoodsCategoryService;
 
-    @Operation(description = "添加商品分类")
+    @Operation(summary = "获取单个分类")
+    @RequestMapping(value = "/{goodsCategoryId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getOne(@PathVariable("goodsCategoryId") Integer goodsCategoryId) {
+        return CommonResult.success(iGoodsCategoryService.getOneGoodsCategory(goodsCategoryId));
+    }
+
+
+    @Operation(summary = "添加商品分类")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult create(@Validated @RequestBody GoodsCategoryParam goodsCategoryParam) {
@@ -57,19 +65,12 @@ public class GoodsCategoryController {
     @RequestMapping(value = "/list/{parentId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<CommonPage<GoodsCategory>> getList(@PathVariable Long parentId,
-                                                                @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
-                                                                @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-        List<GoodsCategory> goodsCategory = iGoodsCategoryService.getList(parentId, pageSize, pageNum);
-        return CommonResult.success(CommonPage.restPage(goodsCategory));
+                                                             @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                                                             @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+        return CommonResult.success(CommonPage.restPage(iGoodsCategoryService.getList(parentId, pageSize, pageNum)));
     }
 
-//    @Operation(summary = "根据id获取商品分类")
-//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public CommonResult<PmsProductCategory> getItem(@PathVariable Long id) {
-//        PmsProductCategory productCategory = iGoodsCategoryService.getItem(id);
-//        return CommonResult.success(productCategory);
-//    }
+
 
     @Operation(summary = "删除商品分类")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)

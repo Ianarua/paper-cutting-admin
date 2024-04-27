@@ -14,12 +14,14 @@
 package com.iyaovo.paper.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryParam;
 import com.iyaovo.paper.admin.domain.dto.GoodsCategoryWithChildrenItem;
 import com.iyaovo.paper.admin.domain.entity.GoodsCategory;
 import com.iyaovo.paper.admin.mapper.GoodsCategoryMapper;
+import com.iyaovo.paper.admin.mapper.GoodsInfoMapper;
 import com.iyaovo.paper.admin.service.IGoodsCategoryService;
+import com.iyaovo.paper.common.api.CommonPage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -38,10 +40,11 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
 
    private final GoodsCategoryMapper goodsCategoryMapper;
 
+   private final GoodsInfoMapper goodsInfoMapper;
 
    @Override
    public int create(GoodsCategoryParam goodsCategoryParam) {
-      return goodsCategoryMapper.insert(new GoodsCategory(null,goodsCategoryParam.getName(),goodsCategoryParam.getParentId()));
+      return goodsCategoryMapper.insert(new GoodsCategory(null,goodsCategoryParam.getName(),goodsCategoryParam.getPicUrl(),goodsCategoryParam.getParentId()));
    }
 
    @Override
@@ -51,15 +54,40 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
 
    @Override
    public int update(Integer id, GoodsCategoryParam goodsCategoryParam) {
-      return goodsCategoryMapper.updateById(new GoodsCategory(id, goodsCategoryParam.getName(), goodsCategoryParam.getParentId()));
+      return goodsCategoryMapper.updateById(new GoodsCategory(id, goodsCategoryParam.getName(),goodsCategoryParam.getPicUrl(),goodsCategoryParam.getParentId()));
    }
 
    @Override
-   public List<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
-      PageHelper.startPage(pageNum,pageSize);
+   public Page<GoodsCategory> getList(Long parentId, Integer pageSize, Integer pageNum) {
       QueryWrapper<GoodsCategory> goodsCategoryQueryWrapper = new QueryWrapper<GoodsCategory>();
       goodsCategoryQueryWrapper.eq("category_superior_id",parentId);
-      return goodsCategoryMapper.selectList(goodsCategoryQueryWrapper);
+      Page<GoodsCategory> page = new Page<>(pageNum, pageSize);
+      Page<GoodsCategory> goodsCategories = goodsCategoryMapper.selectPage(page,goodsCategoryQueryWrapper);
+      List<GoodsCategory> records = goodsCategories.getRecords();
+      records.forEach(goodsCategory -> {
+         goodsCategory.setGoodsNumber(getGoodsNumber(goodsCategory.getGoodsCategoryId(),goodsCategory.getCategorySuperiorId()));
+      });
+      goodsCategories.setRecords(records);
+      return goodsCategories;
+   }
+
+   private Long getGoodsNumber(Integer categoryId, Integer parentId){
+      final long[] number = {0L};
+      if(parentId == 0){
+         QueryWrapper queryCategoryWrapper = new QueryWrapper<>();
+         queryCategoryWrapper.eq("category_superior_id",categoryId);
+         List<GoodsCategory> goodsCategories = goodsCategoryMapper.selectList(queryCategoryWrapper);
+         goodsCategories.forEach(goodsCategory -> {
+            QueryWrapper queryGoodsNumberWrapper = new QueryWrapper<>();
+            queryGoodsNumberWrapper.eq("goods_category_id",goodsCategory.getGoodsCategoryId());
+            number[0] += goodsInfoMapper.selectCount(queryGoodsNumberWrapper);
+         });
+         return number[0];
+      }else{
+         QueryWrapper queryGoodsNumberWrapper = new QueryWrapper<>();
+         queryGoodsNumberWrapper.eq("goods_category_id",categoryId);
+         return goodsInfoMapper.selectCount(queryGoodsNumberWrapper);
+      }
    }
 
    @Override
@@ -76,6 +104,11 @@ public class GoodsCategoryServiceImpl implements IGoodsCategoryService {
          goodsCategoryWithChildrenItems.add(goodsCategoryWithChildrenItem);
       });
       return goodsCategoryWithChildrenItems;
+   }
+
+   @Override
+   public GoodsCategory getOneGoodsCategory(Integer goodsCategoryId) {
+      return goodsCategoryMapper.selectById(goodsCategoryId);
    }
 }
 

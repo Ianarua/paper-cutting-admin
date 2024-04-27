@@ -46,7 +46,19 @@ public class UmsAdminController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<UmsAdmin> register(@Validated @RequestBody UmsAdminParam umsAdminParam) {
+
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
+        if (umsAdmin == null) {
+            return CommonResult.failed();
+        }
+        return CommonResult.success(umsAdmin);
+    }
+
+    @Operation(summary = "管理员添加用户")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult<UmsAdmin> create(@Validated @RequestBody UmsAdminParam umsAdminParam) {
+        UmsAdmin umsAdmin = adminService.create(umsAdminParam);
         if (umsAdmin == null) {
             return CommonResult.failed();
         }

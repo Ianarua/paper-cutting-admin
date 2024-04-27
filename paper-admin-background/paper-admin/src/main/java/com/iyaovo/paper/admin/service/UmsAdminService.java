@@ -1,5 +1,6 @@
 package com.iyaovo.paper.admin.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.iyaovo.paper.admin.domain.dto.UmsAdminParam;
 import com.iyaovo.paper.admin.domain.dto.UpdateAdminPasswordParam;
 import com.iyaovo.paper.admin.domain.entity.UmsAdmin;
@@ -16,6 +17,12 @@ import java.util.List;
  */
 public interface UmsAdminService {
     /**
+     * 获取当前用户
+     * @return
+     */
+    UmsAdmin getUmsAdmin();
+
+    /**
      * 根据用户名获取后台管理员
      */
     UmsAdmin getAdminByUsername(String username);
@@ -23,7 +30,7 @@ public interface UmsAdminService {
     /**
      * 注册功能
      */
-    UmsAdmin register(UmsAdminParam umsAdminParam);
+    UmsAdmin create(UmsAdminParam umsAdminParam);
 
     /**
      * 登录功能
@@ -89,4 +96,6 @@ public interface UmsAdminService {
      * 获取缓存服务
      */
     UmsAdminCacheService getCacheService();
+
+    UmsAdmin register(UmsAdminParam umsAdminParam);
 }

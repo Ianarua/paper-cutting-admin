@@ -28,6 +28,13 @@ public class ShopController {
 
     private final IShopInfoService iShopInfoService;
 
+    @Operation(summary = "获取单个店铺")
+    @RequestMapping(value = "/{shopId}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult getOne(@PathVariable("shopId") Integer shopId) {
+        return CommonResult.success(iShopInfoService.getOneShop(shopId));
+    }
+
     @Operation(summary = "获取全部店铺列表")
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     public CommonResult<List<ShopInfo>> getList() {
@@ -77,15 +84,9 @@ public class ShopController {
     public CommonResult<CommonPage<ShopInfo>> getList(@RequestParam(value = "keyword", required = false) String keyword,
                                                       @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                       @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
-        List<ShopInfo> shopInfoList = iShopInfoService.listShop(keyword,pageNum, pageSize);
-        return CommonResult.success(CommonPage.restPage(shopInfoList));
+        return CommonResult.success(CommonPage.restPage(iShopInfoService.listShop(keyword,pageNum, pageSize)));
     }
 
-//    @Operation(summary = "根据编号查询品牌信息")
-//    @PostMapping(value = "/{id}")
-//    public CommonResult<PmsBrand> getItem(@PathVariable("id") Long id) {
-//        return CommonResult.success(brandService.getBrand(id));
-//    }
 
     @Operation(summary = "批量删除店铺")
     @PostMapping(value = "/delete/batch")

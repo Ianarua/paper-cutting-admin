@@ -2,7 +2,7 @@ import request from '@/utils/request';
 
 export function fetchList (cid, params) {
     return request({
-        url: '/productAttribute/list/' + cid,
+        url: '/goodsCategory/list/' + cid,
         method: 'get',
         params: params
     });
@@ -10,7 +10,7 @@ export function fetchList (cid, params) {
 
 export function deleteProductAttr (data) {
     return request({
-        url: '/productAttribute/delete',
+        url: '/goodsCategory/delete',
         method: 'post',
         data: data
     });
@@ -18,7 +18,7 @@ export function deleteProductAttr (data) {
 
 export function createProductAttr (data) {
     return request({
-        url: '/productAttribute/create',
+        url: '/goodsCategory/create',
         method: 'post',
         data: data
     });
@@ -26,7 +26,7 @@ export function createProductAttr (data) {
 
 export function updateProductAttr (id, data) {
     return request({
-        url: '/productAttribute/update/' + id,
+        url: '/goodsCategory/update/' + id,
         method: 'post',
         data: data
     });
@@ -34,14 +34,14 @@ export function updateProductAttr (id, data) {
 
 export function getProductAttr (id) {
     return request({
-        url: '/productAttribute/' + id,
+        url: '/goodsCategory/' + id,
         method: 'get'
     });
 }
 
 export function getProductAttrInfo (productCategoryId) {
     return request({
-        url: '/productAttribute/attrInfo/' + productCategoryId,
+        url: '/goodsCategory/attrInfo/' + productCategoryId,
         method: 'get'
     });
 }
