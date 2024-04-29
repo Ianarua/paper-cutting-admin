@@ -46,10 +46,10 @@ public class UmsAdminController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<UmsAdmin> register(@Validated @RequestBody UmsAdminParam umsAdminParam) {
-
+        System.out.println(umsAdminParam.getUsername());
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
         if (umsAdmin == null) {
-            return CommonResult.failed();
+            return CommonResult.failed("用户名已被使用");
         }
         return CommonResult.success(umsAdmin);
     }
