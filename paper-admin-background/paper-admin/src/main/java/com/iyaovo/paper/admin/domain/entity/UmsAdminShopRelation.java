@@ -38,6 +38,7 @@ public class UmsAdminShopRelation {
    /**
     * id
     */
+   @TableId(type = IdType.AUTO)
    private Integer id;
 
    /**
