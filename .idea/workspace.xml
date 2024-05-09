@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36848386-29cb-4b4f-aa21-d12f07658b58" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/java/com/iyaovo/paper/admin/controller/UmsAdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/src/main/java/com/iyaovo/paper/admin/controller/UmsAdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/UmsAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/controller/UmsAdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/mapper/UmsAdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/mapper/UmsAdminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/UmsAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/UmsAdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsAdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-background/paper-admin/target/classes/com/iyaovo/paper/admin/service/impl/UmsAdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/api/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paper-admin-web/src/views/ums/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/paper-admin-web/src/views/ums/admin/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +174,8 @@
       <workItem from="1714274201895" duration="3398000" />
       <workItem from="1714300985187" duration="672000" />
       <workItem from="1714352441742" duration="627000" />
+      <workItem from="1714374414223" duration="101000" />
+      <workItem from="1714644657956" duration="585000" />
     </task>
     <servers />
   </component>
